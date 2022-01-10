@@ -447,7 +447,6 @@
 
 // media queries
 @media (max-width: 480px) {
-  // hero content
   .home__content {
     .hero {
       width: 100% !important;
@@ -515,6 +514,7 @@
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          padding-top: 32px !important;
 
           .course__box {
             width: 300px !important;

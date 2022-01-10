@@ -86,6 +86,10 @@
             z-index: 99;
             padding: 8px 0;
             cursor: pointer;
+
+            &:hover {
+              color: #2b2c54;
+            }
           }
         }
 
