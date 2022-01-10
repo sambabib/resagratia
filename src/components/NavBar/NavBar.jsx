@@ -47,7 +47,9 @@ const NavBar = () => {
           <div className='navbar__items'>
             <div className='navbar__menu__container'>
               <div className='navbar__logo'>
-                <img src={resaLogo} alt='resagratia logo' />
+                <Link to="/">
+                  <img src={resaLogo} alt='resagratia logo' />
+                </Link>
               </div>
 
               {/* navbar menu */}
@@ -71,7 +73,7 @@ const NavBar = () => {
                     <p>Power BI</p>
                     <p>Tableau</p>
                     <p>SQL</p>
-                    <Link to="/learn/excel">
+                    <Link to='/learn/excel'>
                       <p>Microsoft Excel</p>
                     </Link>
                     <p>Book Personalized Training Session</p>

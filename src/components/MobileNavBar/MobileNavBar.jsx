@@ -30,7 +30,9 @@ const MobileNavBar = () => {
     <div className='mobile__navbar'>
       <div className='mobile__navbar__container'>
         <div className='mobile__navbar__logo'>
-          <img src={Logo} alt='mobile logo' />
+          <Link to='/'>
+            <img src={Logo} alt='mobile logo' />
+          </Link>
         </div>
         <div className='mobile__navbar__icon'>
           <SearchRoundedIcon

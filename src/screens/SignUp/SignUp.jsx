@@ -48,9 +48,7 @@ const SignUp = () => {
         <div className='background__img two'></div>
         <div className='form'>
           <div className='form__logo'>
-            <Link to='/'>
-              <img src={FormLogo} alt='resa logo' />
-            </Link>
+            <img src={FormLogo} alt='resa logo' />
           </div>
           <form className='form__container' onSubmit={formik.handleSubmit}>
             <h3 className='form__heading'>

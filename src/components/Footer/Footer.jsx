@@ -59,7 +59,7 @@ const Footer = () => {
             <h3>Get Social</h3>
             <div className='footer__icons'>
               <div className='footer__social__icon'>
-                <a href='http://linkedin.com'>
+                <a href='https://www.linkedin.com/company/resagratia'>
                   <img
                     src={LinkedIn}
                     alt='icons made by pixel perfect on flaticons'
@@ -68,7 +68,7 @@ const Footer = () => {
               </div>
 
               <div className='footer__social__icon'>
-                <a href='http://linkedin.com'>
+                <a href='https://twitter.com/ResaData?s=20'>
                   <img
                     src={Twitter}
                     alt='icons made by freepik on flaticons'
