@@ -1,0 +1,243 @@
+.signin {
+  height: 100vh;
+  position: relative;
+  background: #fff;
+
+  .background__img {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    z-index: 2;
+  }
+
+  .one {
+    top: 15%;
+    right: 15%;
+    background-image: url(../../assets/abstract.png);
+    background-repeat: none;
+    background-size: 200px;
+    transform: rotate(90deg);
+  }
+
+  .two {
+    bottom: 25%;
+    left: 15%;
+    background-image: url(../../assets/blur.png);
+    background-repeat: none;
+    background-size: 200px;
+  }
+
+  .signin__container {
+    margin: 0 auto;
+    max-width: 1100px;
+    height: 100%;
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      height: 100%;
+
+      .form__logo {
+        width: 120px;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 0;
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+
+      .form__container {
+        width: 450px;
+        padding: 32px 48px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+          rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        z-index: 10;
+
+        label {
+          position: relative;
+        }
+
+        input {
+          padding: 16px 24px;
+          outline: none;
+          border: 2px solid rgba($color: #808080, $alpha: 0.5);
+          border-radius: 4px;
+          width: 100%;
+
+          &::placeholder {
+            letter-spacing: -1px;
+            font-family: 'Nunito', sans-serif;
+          }
+
+          &:focus {
+            border: 2px solid #2b2c54;
+          }
+        }
+
+        .form__forgot__password {
+          position: relative;
+          padding-bottom: 8px;
+
+          p {
+            cursor: pointer;
+            letter-spacing: -1px;
+            font-size: 12px;
+            color: #2b2c54;
+            font-weight: 700;
+            position: absolute;
+            right: 0;
+          }
+        }
+
+        .visibility__icon {
+          color: #808080;
+          position: absolute;
+          right: 5%;
+          transform: translateY(60%);
+          cursor: pointer;
+        }
+
+        button {
+          outline: none;
+          border: none;
+          background: #2b2c54;
+          color: #fff;
+          padding: 16px 24px;
+          cursor: pointer;
+          border-radius: 4px;
+          letter-spacing: -1px;
+          font-weight: 600;
+          font-family: 'Nunito', sans-serif;
+          margin: 8px 0;
+
+          &:disabled {
+            cursor: not-allowed;
+            background: #c9c9c9ee;
+          }
+        }
+
+        h3 {
+          font-size: 32px;
+          line-height: 1.4;
+          letter-spacing: -2px;
+        }
+      }
+
+      .form__new__account {
+        padding: 16px 32px;
+        width: 450px;
+        margin: 16px 0;
+        background: #fff;
+        border-radius: 4px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+          rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        z-index: 10;
+
+        p,
+        span {
+          font-size: 15px;
+        }
+
+        span {
+          color: #2b2c54;
+          font-weight: 700;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  h3,
+  p {
+    text-align: center;
+    color: #111;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: -1px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .form__errors {
+    letter-spacing: -1px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    color: red;
+  }
+
+  .form__error__border {
+    border: 2px solid red !important;
+  }
+}
+
+// media queries
+@media (max-width: 480px) {
+  .signin {
+    .signin__container {
+      width: 100% !important;
+      padding: 16px;
+
+      .one,
+      .two,
+      .background__img {
+        display: none;
+      }
+
+      .form {
+        .form__logo {
+          width: 150px !important;
+        }
+
+        .form__container {
+          width: 100% !important;
+          padding: 28px !important;
+
+          .form__heading {
+            font-size: 28px !important;
+          }
+
+          .form__forgot__password {
+            padding-bottom: 16px !important;
+
+            p {
+              font-size: 15px !important;
+            }
+          }
+        }
+      }
+
+      .form__new__account {
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 980px) {
+  .form__container {
+    width: 500px !important;
+    padding: 32px 40px !important;
+  }
+
+  .form__new__account {
+    width: 500px !important;
+  }
+
+  .two {
+    bottom: 20% !important;
+  }
+}

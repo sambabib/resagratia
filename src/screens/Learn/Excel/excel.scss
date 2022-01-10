@@ -1,0 +1,67 @@
+.excel {
+  .excel__container {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    .title__container {
+      display: flex;
+
+      .title__description {
+        width: 60%;
+
+        .title__description__heading {
+          display: flex;
+
+          .title__logo {
+            width: 40px;
+            height: auto;
+
+            img {
+              max-width: 100%;
+              max-height: 100%;
+            }
+          }
+
+          h3 {
+            color: #111;
+            font-size: 25px;
+          }
+        }
+
+        .title__description__paragraph {
+          p {
+            font-size: 15px;
+            line-height: 1.5;
+          }
+        }
+      }
+
+      .title__tags {
+        display: flex;
+        gap: 8px;
+        width: fit-content;
+
+        .tag__courses,
+        .tag__hours,
+        .tag__projects,
+        .tag__resources {
+            padding: 4px 12px;
+            border-radius: 25px;
+            border: 2px solid #2b2c54;
+        }
+
+        p {
+          font-size: 12px;
+          font-weight: 500;
+          color: #2b2c54;
+        }
+      }
+    }
+  }
+
+  h3,
+  p {
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: -1px;
+  }
+}
