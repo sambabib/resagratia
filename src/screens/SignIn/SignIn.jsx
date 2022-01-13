@@ -52,14 +52,14 @@ const SignIn = () => {
             <img src={FormLogo} alt='resa logo' />
           </div>
           <form className='form__container' onSubmit={formik.handleSubmit}>
-            <h3 className='form__heading'>Welcome back!</h3>
+            <h3 className='form__heading'>Sign in</h3>
             <label htmlFor='email' />
             <input
               id='email'
               name='email'
               type='email'
               autoComplete='off'
-              placeholder='Email address'
+              placeholder='Email'
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.email}

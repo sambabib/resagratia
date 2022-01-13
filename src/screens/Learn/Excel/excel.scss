@@ -5,9 +5,12 @@
 
     .title__container {
       display: flex;
+      gap: 48px;
+      padding: 8px 0;
 
       .title__description {
         width: 70%;
+        position: relative;
 
         .title__description__heading {
           display: flex;
@@ -24,11 +27,13 @@
 
           h3 {
             color: #111;
-            font-size: 25px;
+            font-size: 24px;
           }
         }
 
         .title__description__paragraph {
+          width: 95%;
+
           p {
             font-size: 15px;
             line-height: 1.5;
@@ -41,6 +46,8 @@
         display: flex;
         gap: 8px;
         width: fit-content;
+        position: absolute;
+        bottom: 0;
 
         .tag__courses,
         .tag__hours,
@@ -63,6 +70,8 @@
         height: 350px;
 
         .title__media__container {
+          height: inherit;
+
           .media__container {
             display: flex;
             flex-direction: column;
@@ -72,7 +81,7 @@
 
             video {
               width: 100%;
-              height: 300px;
+              height: 280px;
             }
 
             .media__getstarted__button {
@@ -92,34 +101,223 @@
     }
 
     .content__and__tutors {
-        display: flex;
+      display: flex;
+      margin: 24px 0;
+      padding: 8px 0;
+      gap: 48px;
 
       .content__container {
-        border: 4px solid orange;
-        width: 50%;
+        width: 70%;
+        padding: 16px 32px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+          rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 
         .content__items {
-          border: 4px solid green;
           display: flex;
+          gap: 32px;
 
           .content__left {
-              display: flex;
-              flex-direction: column;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
 
-              .circle {
-                  width: 18px;
-                  height: 18px;
+            .circle {
+              width: 14px;
+              height: 14px;
+              border-radius: 50%;
+              border: 2px solid #111;
+            }
+
+            .border {
+              border-left: 1px solid #111;
+              border-left-width: thin;
+              height: 125px;
+            }
+          }
+
+          .content__right {
+            .content__right__container {
+              margin: 8px 0;
+              height: fit-content;
+            }
+
+            .content__right__heading {
+              h3 {
+                font-size: 16px;
+                color: #111;
+              }
+            }
+
+            .content__right__paragraph {
+              width: 95%;
+
+              p {
+                font-size: 14px;
+                padding: 4px 0;
+                color: #111;
+              }
+            }
+
+            .content__right__tags {
+              display: flex;
+              gap: 8px;
+              width: fit-content;
+              padding: 8px 0;
+
+              p {
+                font-size: 12px;
+                padding: 4px 12px;
+                border-radius: 25px;
+                border: 2px solid #2b2c54;
+                color: #2b2c54;
+                font-weight: 500;
+              }
+            }
+          }
+        }
+      }
+
+      .tutors {
+        width: 30%;
+        height: fit-content;
+        padding: 0 16px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+          rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        border-radius: 4px;
+
+        .tutors__container {
+          padding: 16px 0;
+
+          .tutor__description__container {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+
+            .tutor__description {
+              display: flex;
+              gap: 8px;
+
+              .tutor__img {
+                width: 40px;
+                height: 40px;
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
                   border-radius: 50%;
                   border: 2px solid #2b2c54;
+                }
               }
 
-              .border {
-                  border-left: 1px solid red;
-                  border-left-width: thin;
-                  height: 80px;
+              .tutor__details {
+                .tutor__name {
+                  font-size: 16px;
+                }
 
+                .tutor__job__title {
+                  font-size: 13px;
+                  color: #808080;
+                }
               }
+            }
           }
+        }
+      }
+    }
+
+    // additional courses
+    .additional__courses {
+      margin: 24px 0;
+      padding: 8px 0;
+
+      .additional__courses__container {
+        padding: 0 32px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+          rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        border-radius: 4px;
+
+        .additional__courses__item {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          cursor: pointer;
+          padding: 16px 0;
+
+          .additional__courses__heading {
+            font-size: 16px;
+          }
+        }
+
+        .additional__courses__content {
+          border-top: 1px solid rgba($color: #111, $alpha: 0.08);
+          padding: 16px 0;
+        }
+      }
+    }
+
+    // organizations
+    .organizations {
+      margin: 24px 0;
+      padding: 8px 0;
+
+      .organizations__container {
+        text-align: center;
+
+        .organizations__heading {
+          h3 {
+            line-height: 1.5;
+          }
+        }
+
+        .organizations__logos__container {
+          padding: 16px 0;
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: baseline;
+
+          .organizations__logos {
+            width: 80px;
+
+            img {
+              max-width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    // join excel
+    .join__excel {
+      margin: 24px 0;
+      padding: 16px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top: 1px solid rgba($color: #111, $alpha: 0.08);
+      border-bottom: 1px solid rgba($color: #111, $alpha: 0.08);
+
+      .join__excel__container {
+        display: flex;
+        align-items: center;
+        border-radius: 4px;
+        padding: 8px 0;
+        gap: 48px;  
+
+        .join__excel__heading {
+          font-size: 22px;
+        }
+
+        .join__excel__button {
+          background: #2b2c54;
+          color: #fff;
+          font-weight: 600;
+          border-radius: 4px;
+          padding: 12px 28px;
+          cursor: pointer;
         }
       }
     }

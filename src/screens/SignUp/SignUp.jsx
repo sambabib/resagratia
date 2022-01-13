@@ -60,7 +60,7 @@ const SignUp = () => {
               name='email'
               type='email'
               autoComplete='off'
-              placeholder='Email address'
+              placeholder='Email'
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.email}
