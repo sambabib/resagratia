@@ -80,8 +80,7 @@
 
           &::placeholder {
             letter-spacing: -1px;
-            text-transform: uppercase;
-            font-size: 12px !important;
+            font-size: 15px !important;
             font-family: 'Nunito', sans-serif;
           }
 
@@ -179,7 +178,7 @@
   .form__errors {
     letter-spacing: -1px;
     font-family: 'Nunito', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     color: red;
   }
 
@@ -211,10 +210,10 @@
           padding: 28px !important;
 
           input {
-            font-size: 20px;
+            font-size: 18px;
 
             &::placeholder {
-              font-size: 14px !important;
+              font-size: 15px !important;
             }
           }
 
@@ -222,7 +221,7 @@
             color: #808080;
             position: absolute;
             right: 5%;
-            transform: translateY(90%);
+            transform: translateY(70%);
             cursor: pointer;
           }
 

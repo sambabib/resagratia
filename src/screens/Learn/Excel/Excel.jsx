@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Carousel from '../../../components/ExcelCarousel/ExcelCarousel';
 
 // @assets
 import ExcelLogo from '../../../assets/excel.png';
@@ -13,6 +14,8 @@ import Shell from '../../../assets/shell.png';
 import Softcom from '../../../assets/softcom.png';
 import TradeDepot from '../../../assets/trade-depot.png';
 import UI from '../../../assets/uofibadan.png';
+import Dangote from '../../../assets/dangote.jpg';
+import Deloitte from '../../../assets/deloitte.png';
 
 // @icons
 import KeyboardArrowRightRoundedIcon from '@mui/icons-material/KeyboardArrowRightRounded';
@@ -47,13 +50,15 @@ const tags = [
 const content = [
   {
     id: 1,
-    title: 'Intoduction to Excel',
-    description: ` Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde
-        ad mollitia molestiae distinctio architecto reiciendis neque
-        fuga quis, harum ipsam consequuntur veniam odio dolor, culpa
-        aut, sit corporis ullam. Doloribus? istinctio architecto reiciendis neque
-        fuga quis, harum ipsam consequuntur veniam odio dolor, culpa
-        aut, sit corporis ullam`,
+    title: 'Introduction to Excel',
+    description: `Microsoft Excel is the industry leading spreadsheet program, 
+    used by millions of people all over the world. 
+    Learning to confidently operate this software will add a highly valuable asset to your employability portfolio. 
+    Completing this course will position you ahead of others , 
+    and will help you build a strong foundation to develop more advanced skills in later courses 
+    and more importantly have some fun along the way…. 
+    Let’s get started
+    `,
     tags: [
       {
         id: 11,
@@ -70,12 +75,13 @@ const content = [
   {
     id: 2,
     title: 'Business Analysis with Excel',
-    description: ` Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde
-        ad mollitia molestiae distinctio architecto reiciendis neque
-        fuga quis, harum ipsam consequuntur veniam odio dolor, culpa
-        aut, sit corporis ullam. Doloribus? istinctio architecto reiciendis neque
-        fuga quis, harum ipsam consequuntur veniam odio dolor, culpa
-        aut, sit corporis ullam`,
+    description: `Excel’s ease and flexibility have long made it a tool of choice 
+    and also the building block tool in Data analysis. 
+    In this module, we will go a step further in understanding the intricacies of Microsoft Excel 
+    and its importance in analysing data in the business environment. 
+    We shall introduce you to data analysis tools and functions that can be used to automate your workflow.. 
+    Sound exciting? Let’s get started..
+    `,
     tags: [
       {
         id: 21,
@@ -92,10 +98,12 @@ const content = [
   {
     id: 3,
     title: 'Advanced Analytics with Excel',
-    description: ` Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde
-        ad mollitia molestiae distinctio architecto reiciendis neque
-        fuga quis, harum ipsam consequuntur veniam odio dolor, culpa
-        aut, sit corporis ullam. Doloribus?`,
+    description: `In this course, you will learn best practices for how to use data analytics to make any company more competitive 
+    and more profitable. 
+    What you learn in this course will give you a strong foundation in all the areas that support analytics 
+    and will help you to better position yourself for success within your organization. 
+    You’ll develop skills and a perspective that will make you more productive, 
+    and allow you to become a valuable asset to your organization.`,
     tags: [
       {
         id: 31,
@@ -165,12 +173,53 @@ const logos = [
     id: 8,
     img: UI,
   },
+  {
+    id: 9,
+    img: Dangote,
+  },
+  {
+    id: 10,
+    img: Deloitte,
+  },
+];
+
+const faqs = [
+  {
+    id: 1,
+    question: `Are the courses online?`,
+    answer: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Quibusdam nostrum reprehenderit harum tenetur voluptatem
+    perspiciatis suscipit, vel, facere laboriosam autem, maiores
+    eum dolorem dicta iusto fugiat dolor!`,
+  },
+  {
+    id: 2,
+    question: `What can I do with Excel?`,
+    answer: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Quibusdam nostrum reprehenderit harum tenetur voluptatem
+    perspiciatis suscipit, vel, facere laboriosam autem, maiores
+    eum dolorem dicta iusto fugiat dolor!`,
+  },
+  {
+    id: 3,
+    question: `What do I need to get started?`,
+    answer: `Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Quibusdam nostrum reprehenderit harum tenetur voluptatem
+    perspiciatis suscipit, vel, facere laboriosam autem, maiores
+    eum dolorem dicta iusto fugiat dolor!`,
+  },
 ];
 
 const Excel = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isFaqExpanded, setIsFaqExpanded] = useState(false);
+
   const handleShowExpanded = () => {
     setIsExpanded(!isExpanded);
+  };
+
+  const handleFaqExpanded = () => {
+    setIsFaqExpanded(!isFaqExpanded);
   };
 
   return (
@@ -188,10 +237,17 @@ const Excel = () => {
             </div>
             <div className='title__description__paragraph'>
               <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde
-                ad mollitia molestiae distinctio architecto reiciendis neque
-                fuga quis, harum ipsam consequuntur veniam odio dolor, culpa
-                aut, sit corporis ullam. Doloribus?
+                Gain in demand skills applicable to any industry. Microsoft
+                Excel is an ubiquitous tool that is great for data manipulation,
+                analysis, and visualization – you can sort, filter, format, and
+                chart your data all within one program. As data becomes the
+                modern currency, so the ability to analyse the data quickly and
+                accurately has become of paramount importance. Learn the
+                fundamental principles, gain desirable skills, and key
+                techniques with this carefully curated project based curriculum
+                that will empower you to stand out in the workplace especially
+                at a time when digital skills jobs are growing much faster than
+                non-digital jobs.
               </p>
             </div>
 
@@ -207,11 +263,7 @@ const Excel = () => {
           <div className='title__media'>
             <div className='title__media__container'>
               <div className='media__container'>
-                <video
-                  src='https://youtu.be/ysTcxiyAjYw'
-                  controls='controls'
-                  autoPlay={true}
-                ></video>
+                <video src='' controls='controls' autoPlay={true}></video>
                 <div className='media__getstarted__button'>
                   <p>Get started</p>
                 </div>
@@ -222,55 +274,67 @@ const Excel = () => {
 
         {/* content */}
         <div className='content__and__tutors'>
-          <div className='content__container'>
-            <div className='content__items'>
-              <div className='content__left'>
-                {content.map((item) => (
-                  <>
-                    <div key={item.circle} className={item.circle}></div>
-                    <div key={item.border} className={item.border}></div>
-                  </>
-                ))}
-              </div>
-              <div className='content__right'>
-                {content.map((item) => (
-                  <>
-                    <div className='content__right__container' key={item.id}>
-                      <div className='content__right__heading'>
-                        <h3>{item.title}</h3>
-                      </div>
-                      <div className='content__right__paragraph'>
-                        <p>{item.description}</p>
-                      </div>
-                      <div className='content__right__tags'>
-                        {item.tags.map((tag) => (
-                          <p key={tag.id}>{tag.data}</p>
-                        ))}
-                      </div>
-                    </div>
-                  </>
-                ))}
-              </div>
-            </div>
-          </div>
+          <div className='content__and__tutors__container'>
+            <div className='content__and__tutors__items'>
+              <div className='content__items__container'>
+                <div className='content__heading'>
+                  <h3>Curriculum Content</h3>
+                </div>
+                <div className='content__items'>
+                  <div className='circle__border__container'>
+                    {content.map((item) => (
+                      <>
+                        <div className='circle__and__description'>
+                          <div className={item.circle}></div>
+                          <div className='content__right__heading'>
+                            <h3>{item.title}</h3>
+                          </div>
+                        </div>
 
-          {/* tutors */}
-          <div className='tutors'>
-            <div className='tutors__container'>
-              <div className='tutor__description__container'>
-                {tutors.map((tutor) => (
-                  <>
-                    <div className='tutor__description' key={tutor.id}>
-                      <div className='tutor__img'>
-                        <img src={tutor.img} alt={tutor.name} />
-                      </div>
-                      <div className='tutor__details'>
-                        <h3 className='tutor__name'>{tutor.name}</h3>
-                        <p className='tutor__job__title'>{tutor.job}</p>
-                      </div>
-                    </div>
-                  </>
-                ))}
+                        <div className='border__and__paragraph'>
+                          <div className={item.border}></div>
+                          <div className='content__right__paragraph'>
+                            <p>{item.description}</p>
+                          </div>
+                        </div>
+
+                        <div className='content__right__tags'>
+                          {item.tags.map((tag) => (
+                            <p key={tag.id}>{tag.data}</p>
+                          ))}
+                        </div>
+                      </>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* tutors */}
+              <div className='tutors'>
+                <div className='tutors__container'>
+                  <div className='tutors__heading'>
+                    <h3>Expert tutors</h3>
+                  </div>
+                  <div className='tutors__description__container'>
+                    {tutors.map((tutor) => (
+                      <>
+                        <div className='tutor__description' key={tutor.id}>
+                          <div className='tutor__img'>
+                            <img src={tutor.img} alt={tutor.name} />
+                          </div>
+                          <div className='tutor__info'>
+                            <div className='tutor__name'>
+                              <h3>{tutor.name}</h3>
+                            </div>
+                            <div className='tutor__job__title'>
+                              <p>{tutor.job}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -279,38 +343,41 @@ const Excel = () => {
         {/* additional courses in excel */}
         <div className='additional__courses'>
           <div className='additional__courses__container'>
+            <div className='additional__courses__heading'>
+              <h3>Some additional courses in Excel</h3>
+            </div>
             <div
-              className='additional__courses__item'
+              className='additional__courses__content'
               onClick={handleShowExpanded}
             >
-              {isExpanded ? (
-                <KeyboardArrowRightRoundedIcon className='keyboard__right__icon' />
-              ) : (
-                <KeyboardArrowDownRoundedIcon className='keyboard__down__icon' />
-              )}
-              <h3 className='additional__courses__heading'>
-                Additional Courses in Excel
-              </h3>
-            </div>
-            {!isExpanded && (
-              <div className='additional__courses__content'>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quibusdam nostrum reprehenderit harum tenetur voluptatem
-                  perspiciatis suscipit, vel, facere laboriosam autem, maiores
-                  eum dolorem dicta iusto fugiat dolor! At, recusandae. Vel!
-                </p>
+              <div className='additional__courses__item'>
+                <h3>Additional courses in Excel</h3>
+                {!isExpanded ? (
+                  <KeyboardArrowRightRoundedIcon className='keyboard__right__icon' />
+                ) : (
+                  <KeyboardArrowDownRoundedIcon className='keyboard__down__icon' />
+                )}
               </div>
-            )}
+              {isExpanded ? (
+                <div className='additional__courses__details'>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quibusdam nostrum reprehenderit harum tenetur voluptatem
+                    perspiciatis suscipit, vel, facere laboriosam autem, maiores
+                    eum dolorem dicta iusto fugiat dolor! At, recusandae. Vel!
+                  </p>
+                </div>
+              ) : null}
+            </div>
           </div>
         </div>
 
         {/* organizations */}
         <div className='organizations'>
           <div className='organizations__container'>
-            <div className='organizations__heading'>
-              <h3>Organizations where some of our students come from</h3>
-            </div>
+            <h3 className='organizations__heading'>
+              Organizations where some of our students come from
+            </h3>
             <div className='organizations__logos__container'>
               {logos.map((logo) => (
                 <div className='organizations__logos' key={logo.id}>
@@ -322,15 +389,56 @@ const Excel = () => {
         </div>
 
         {/* carousel */}
+        <div className='excel__carousel'>
+          <div className='excel__carousel__container'>
+            <h3 className='excel__carousel__heading'>
+              Some of our best reviews
+            </h3>
+            <h3 className='excel__carousel__subheading'>
+              Here are reviews from some of our students
+            </h3>
+            <div className='excel__imported__carousel'>
+              <Carousel />
+            </div>
+          </div>
+        </div>
 
         {/* join for free */}
         <div className='join__excel'>
           <div className='join__excel__container'>
-            <h3 className='join__excel__heading'>
-              Join our learners to gain in-demand skills
-            </h3>
+            <div className='join__excel__heading__container'>
+              <h3>Want to skill up?</h3>
+              <p>Join our learners to gain in-demand skills</p>
+            </div>
             <div className='join__excel__button'>
               <p>Get started</p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQs */}
+        <div className='faq'>
+          <div className='faq__container'>
+            <div className='faq__items'>
+              <h3 className='faq__heading'>FAQs</h3>
+              <h3 className='faq__subheading'>Frequently asked questions</h3>
+              {faqs.map((faq) => (
+                <div className='faq__details' key={faq.id} onClick={handleFaqExpanded}>
+                  <div className='faq__question'>
+                    <h3>{faq.question}</h3>
+                    {!isFaqExpanded ? (
+                      <KeyboardArrowRightRoundedIcon className='keyboard__right__icon' />
+                    ) : (
+                      <KeyboardArrowDownRoundedIcon className='keyboard__down__icon' />
+                    )}
+                  </div>
+                  {isFaqExpanded ? (
+                    <div className='faq__answer'>
+                      <p>{faq.answer}</p>
+                    </div>
+                  ) : null}
+                </div>
+              ))}
             </div>
           </div>
         </div>

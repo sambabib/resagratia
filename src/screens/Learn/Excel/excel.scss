@@ -1,22 +1,22 @@
 .excel {
   .excel__container {
-    max-width: 1100px;
-    margin: 0 auto;
-
     .title__container {
+      max-width: 1100px;
+      margin: 0 auto;
       display: flex;
       gap: 48px;
-      padding: 8px 0;
+      padding: 24px 0;
+      height: 400px;
 
       .title__description {
         width: 70%;
-        position: relative;
 
         .title__description__heading {
           display: flex;
+          align-items: center;
 
           .title__logo {
-            width: 40px;
+            width: 78px;
             height: auto;
 
             img {
@@ -27,7 +27,8 @@
 
           h3 {
             color: #111;
-            font-size: 24px;
+            font-size: 30px;
+            // text-transform: uppercase;
           }
         }
 
@@ -36,7 +37,7 @@
 
           p {
             font-size: 15px;
-            line-height: 1.5;
+            line-height: 1.8;
           }
         }
       }
@@ -46,8 +47,6 @@
         display: flex;
         gap: 8px;
         width: fit-content;
-        position: absolute;
-        bottom: 0;
 
         .tag__courses,
         .tag__hours,
@@ -67,21 +66,21 @@
 
       .title__media {
         width: 30%;
-        height: 350px;
 
         .title__media__container {
-          height: inherit;
+          height: 100%;
+          padding-bottom: 16px;
 
           .media__container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            height: inherit;
             align-items: flex-start;
             gap: 16px;
 
             video {
               width: 100%;
-              height: 280px;
+              height: 250px;
             }
 
             .media__getstarted__button {
@@ -100,70 +99,88 @@
       }
     }
 
+    // content & tutors
     .content__and__tutors {
-      display: flex;
-      margin: 24px 0;
-      padding: 8px 0;
-      gap: 48px;
+      height: 640px;
+      padding: 16px 0;
 
-      .content__container {
-        width: 70%;
-        padding: 16px 32px;
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
-          rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+      .content__and__tutors__container {
+        max-width: 1100px;
+        margin: 0 auto;
+
+        .content__heading {
+          padding-bottom: 16px;
+
+          h3 {
+            text-transform: uppercase;
+            font-size: 12px;
+            color: #2b2c54;
+          }
+        }
+
+        .content__and__tutors__items {
+          display: flex;
+          gap: 48px;
+        }
+
+        .content__items__container {
+          width: 70%;
+        }
 
         .content__items {
-          display: flex;
-          gap: 32px;
+          height: fit-content;
+          width: 100%;
+          padding: 16px 32px;
+          box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+            rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 
-          .content__left {
+          .circle__border__container {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 8px;
+            gap: 6px;
 
-            .circle {
-              width: 14px;
-              height: 14px;
-              border-radius: 50%;
-              border: 2px solid #111;
-            }
+            .circle__and__description,
+            .border__and__paragraph {
+              display: flex;
+              width: fit-content;
+              align-items: center;
+              gap: 16px;
 
-            .border {
-              border-left: 1px solid #111;
-              border-left-width: thin;
-              height: 125px;
-            }
-          }
-
-          .content__right {
-            .content__right__container {
-              margin: 8px 0;
-              height: fit-content;
-            }
-
-            .content__right__heading {
-              h3 {
-                font-size: 16px;
-                color: #111;
+              .circle {
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                border: 1px solid #2b2c54;
               }
-            }
 
-            .content__right__paragraph {
-              width: 95%;
+              .border {
+                border-left: 1px solid #2b2c54;
+                border-left-width: thin;
+                height: 100px;
+                margin-left: 1%;
+              }
 
-              p {
-                font-size: 14px;
-                padding: 4px 0;
-                color: #111;
+              .content__right__heading {
+                h3 {
+                  font-size: 18px;
+                  color: #2b2c54;
+                }
+              }
+
+              .content__right__paragraph {
+                p {
+                  font-size: 13px;
+                  line-height: 1.8;
+                  margin-left: 1%;
+                }
               }
             }
 
             .content__right__tags {
               display: flex;
+              margin-left: 5%;
               gap: 8px;
               width: fit-content;
-              padding: 8px 0;
 
               p {
                 font-size: 12px;
@@ -171,54 +188,67 @@
                 border-radius: 25px;
                 border: 2px solid #2b2c54;
                 color: #2b2c54;
-                font-weight: 500;
+                font-weight: 400;
               }
             }
           }
         }
-      }
 
-      .tutors {
-        width: 30%;
-        height: fit-content;
-        padding: 0 16px;
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
-          rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-        border-radius: 4px;
+        .tutors {
+          width: 30%;
+          height: fit-content;
 
-        .tutors__container {
-          padding: 16px 0;
+          .tutors__container {
+            .tutors__heading {
+              padding-bottom: 16px;
 
-          .tutor__description__container {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-
-            .tutor__description {
-              display: flex;
-              gap: 8px;
-
-              .tutor__img {
-                width: 40px;
-                height: 40px;
-
-                img {
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  border-radius: 50%;
-                  border: 2px solid #2b2c54;
-                }
+              h3 {
+                text-transform: uppercase;
+                font-size: 12px;
+                color: #2b2c54;
               }
+            }
 
-              .tutor__details {
-                .tutor__name {
-                  font-size: 16px;
+            .tutors__description__container {
+              height: fit-content;
+              padding: 16px;
+              display: flex;
+              flex-direction: column;
+              gap: 32px;
+              box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+                rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+              .tutor__description {
+                display: flex;
+                gap: 8px;
+
+                .tutor__img {
+                  width: 40px;
+                  height: 40px;
+
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    border: 1px solid #2b2c54;
+                  }
                 }
 
-                .tutor__job__title {
-                  font-size: 13px;
-                  color: #808080;
+                .tutor__info {
+                  .tutor__name {
+                    h3 {
+                      font-size: 15px;
+                      color: #111;
+                    }
+                  }
+
+                  .tutor__job__title {
+                    p {
+                      font-size: 12px;
+                      color: #808080;
+                    }
+                  }
                 }
               }
             }
@@ -229,58 +259,90 @@
 
     // additional courses
     .additional__courses {
-      margin: 24px 0;
-      padding: 8px 0;
+      height: 380px;
+      background: #000;
+      padding: 16px 0;
 
       .additional__courses__container {
-        padding: 0 32px;
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
-          rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-        border-radius: 4px;
+        height: 380px;
+        max-width: 1100px;
+        margin: 0 auto;
 
-        .additional__courses__item {
-          display: flex;
-          align-items: center;
-          gap: 8px;
-          cursor: pointer;
+        .additional__courses__heading {
           padding: 16px 0;
 
-          .additional__courses__heading {
-            font-size: 16px;
+          h3 {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #ff8c00;
           }
         }
 
         .additional__courses__content {
+          padding: 16px 32px;
+          border: 1px solid rgba($color: #fff, $alpha: 0.3);
+          border-radius: 4px;
+          cursor: pointer;
+
+          .additional__courses__item {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h3 {
+              font-size: 15px;
+              color: #fff;
+            }
+          }
+        }
+
+        .additional__courses__details {
           border-top: 1px solid rgba($color: #111, $alpha: 0.08);
           padding: 16px 0;
+
+          p {
+            color: #fff;
+          }
         }
+      }
+
+      .keyboard__down__icon,
+      .keyboard__right__icon {
+        font-size: 20px;
+        color: #ff8c00;
       }
     }
 
     // organizations
     .organizations {
-      margin: 24px 0;
-      padding: 8px 0;
+      padding: 16px 0;
+      height: 200px;
 
       .organizations__container {
-        text-align: center;
+        max-width: 1100px;
+        margin: 0 auto;
+        height: 480px;
 
         .organizations__heading {
-          h3 {
-            line-height: 1.5;
-          }
+          text-transform: uppercase;
+          font-size: 12px;
+          text-align: center;
+          padding-top: 16px;
         }
 
         .organizations__logos__container {
-          padding: 16px 0;
           width: 100%;
+          padding: 16px 0;
+          margin: 0 auto;
           display: flex;
-          flex-wrap: wrap;
           justify-content: space-between;
-          align-items: baseline;
+          align-items: center;
+          gap: 24px;
 
           .organizations__logos {
-            width: 80px;
+            width: 70px;
+            padding: 16px 0;
 
             img {
               max-width: 100%;
@@ -292,33 +354,127 @@
 
     // join excel
     .join__excel {
-      margin: 24px 0;
-      padding: 16px 0;
+      height: 280px;
       display: flex;
       justify-content: center;
       align-items: center;
-      border-top: 1px solid rgba($color: #111, $alpha: 0.08);
-      border-bottom: 1px solid rgba($color: #111, $alpha: 0.08);
 
       .join__excel__container {
+        max-width: 1100px;
+        margin: 24px auto;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        border-radius: 4px;
-        padding: 8px 0;
-        gap: 48px;  
+        gap: 16px;
 
-        .join__excel__heading {
-          font-size: 22px;
+        .join__excel__heading__container {
+          text-align: center;
+
+          h3 {
+            font-size: 32px;
+            color: #2b2c54;
+            width: 700px;
+          }
+
+          p {
+            font-size: 18px;
+            padding: 16px 0;
+            margin: 0 auto;
+            color: #2b2c54;
+          }
         }
 
         .join__excel__button {
           background: #2b2c54;
           color: #fff;
-          font-weight: 600;
+          font-weight: 700;
+          font-size: 14px;
           border-radius: 4px;
-          padding: 12px 28px;
+          padding: 16px 48px;
           cursor: pointer;
         }
+      }
+    }
+
+    // carousel
+    .excel__carousel {
+      background: #000;
+      height: 580px;
+      padding: 16px 0;
+
+      .excel__carousel__container {
+        max-width: 1100px;
+        margin: 24px auto;
+
+        .excel__carousel__heading {
+          font-size: 12px;
+          text-transform: uppercase;
+          color: #ff8c00;
+        }
+
+        .excel__carousel__subheading {
+          font-size: 32px;
+          width: 350px;
+          padding-top: 16px;
+          color: #fff;
+        }
+      }
+    }
+
+    // Faqs
+    .faq {
+      background: #000;
+
+      .faq__container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 32px;
+
+        .faq__heading {
+          font-size: 12px;
+          color: #ff8c00;
+        }
+
+        .faq__subheading {
+          font-size: 32px;
+          padding: 16px 0;
+          width: 350px;
+        }
+
+        .faq__question {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          cursor: pointer;
+          padding: 16px 0;
+
+          h3 {
+            font-size: 15px;
+          }
+        }
+
+        .faq__answer {
+          padding: 16px 0;
+          border-top: 1px solid rgba($color: #111, $alpha: 0.08);
+        }
+
+        .faq__details {
+          margin: 16px 0;
+          padding: 8px 32px;
+          border: 1px solid rgba($color: #fff, $alpha: 0.3);
+          border-radius: 4px;
+        }
+
+        .keyboard__down__icon,
+        .keyboard__right__icon {
+          color: #ff8c00;
+        }
+      }
+
+      h3,
+      p {
+        color: #fff;
       }
     }
   }
