@@ -1,0 +1,35 @@
+.faqlist {
+  .faqlist__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 16px 0;
+
+    h3 {
+      font-size: 15px;
+    }
+  }
+
+  .faqlist__answer {
+    padding: 16px 0;
+    border-top: 1px solid rgba($color: #fff, $alpha: 0.2);
+  }
+
+  .faqlist__details {
+    margin: 16px 0;
+    padding: 8px 32px;
+    border: 1px solid rgba($color: #fff, $alpha: 0.3);
+    border-radius: 4px;
+  }
+
+  .keyboard__down__icon,
+  .keyboard__right__icon {
+    color: #ff8c00;
+  }
+
+  h3,
+  p {
+    color: #fff;
+  }
+}

@@ -47,7 +47,7 @@ const NavBar = () => {
           <div className='navbar__items'>
             <div className='navbar__menu__container'>
               <div className='navbar__logo'>
-                <Link to="/">
+                <Link to='/'>
                   <img src={resaLogo} alt='resagratia logo' />
                 </Link>
               </div>
@@ -96,7 +96,9 @@ const NavBar = () => {
                     onMouseLeave={() => setState({ menu2: false })}
                   >
                     <p>Cost of Electricity in Nigeria</p>
-                    <p>Fuel Prices in Nigeria</p>
+                    <Link to="/products/fuel_prices_in_nigeria">
+                      <p>Fuel Prices in Nigeria</p>
+                    </Link>
                     <p>Financial Performance of Banks in Nigeria</p>
                   </div>
                 ) : null}

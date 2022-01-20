@@ -1,5 +1,8 @@
 import { useState } from 'react';
-import Carousel from '../../../components/ExcelCarousel/ExcelCarousel';
+import Carousel from '../../../components/Carousel/Carousel';
+
+// @components
+import FaqList from '../../../components/FaqList/FaqList';
 
 // @assets
 import ExcelLogo from '../../../assets/excel.png';
@@ -212,14 +215,9 @@ const faqs = [
 
 const Excel = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isFaqExpanded, setIsFaqExpanded] = useState(false);
 
   const handleShowExpanded = () => {
     setIsExpanded(!isExpanded);
-  };
-
-  const handleFaqExpanded = () => {
-    setIsFaqExpanded(!isFaqExpanded);
   };
 
   return (
@@ -282,16 +280,16 @@ const Excel = () => {
                 </div>
                 <div className='content__items'>
                   <div className='circle__border__container'>
-                    {content.map((item) => (
+                    {content.map((item, index) => (
                       <>
-                        <div className='circle__and__description'>
+                        <div className='circle__and__description' key={item.id}>
                           <div className={item.circle}></div>
                           <div className='content__right__heading'>
                             <h3>{item.title}</h3>
                           </div>
                         </div>
 
-                        <div className='border__and__paragraph'>
+                        <div className='border__and__paragraph' key={index}>
                           <div className={item.border}></div>
                           <div className='content__right__paragraph'>
                             <p>{item.description}</p>
@@ -422,23 +420,13 @@ const Excel = () => {
             <div className='faq__items'>
               <h3 className='faq__heading'>FAQs</h3>
               <h3 className='faq__subheading'>Frequently asked questions</h3>
-              {faqs.map((faq) => (
-                <div className='faq__details' key={faq.id} onClick={handleFaqExpanded}>
-                  <div className='faq__question'>
-                    <h3>{faq.question}</h3>
-                    {!isFaqExpanded ? (
-                      <KeyboardArrowRightRoundedIcon className='keyboard__right__icon' />
-                    ) : (
-                      <KeyboardArrowDownRoundedIcon className='keyboard__down__icon' />
-                    )}
-                  </div>
-                  {isFaqExpanded ? (
-                    <div className='faq__answer'>
-                      <p>{faq.answer}</p>
-                    </div>
-                  ) : null}
-                </div>
-              ))}
+              <ul>
+                {faqs.map((faq) => {
+                  return (
+                    <FaqList question={faq.question} answer={faq.answer} key={faq.id} />
+                  );
+                })}
+              </ul>
             </div>
           </div>
         </div>

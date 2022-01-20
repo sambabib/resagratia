@@ -1,0 +1,61 @@
+.carousel {
+  padding: 48px 0;
+
+  .carousel__container {
+    .carousel__items__container {
+      display: flex;
+
+      .carousel__items {
+        margin: 0 8px;
+        background: #fff;
+        height: 240px;
+        padding: 14px 28px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+          rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        border-radius: 4px;
+        position: relative;
+
+        .carousel__user__info {
+          position: absolute;
+          right: 7%;
+
+          .carousel__user {
+            font-size: 15px;
+            font-weight: 600;
+            text-align: right;
+          }
+        }
+
+        .carousel__review {
+          display: flex;
+          flex-direction: column;
+          height: 75%;
+          padding: 0 16px;
+          justify-content: center;
+          align-items: center;
+
+          p {
+            font-size: 15px;
+            line-height: 1.6;
+          }
+        }
+
+        .carousel__rating {
+          display: flex;
+
+          .star__icon {
+            font-size: 15px;
+            color: #ff9529;
+          }
+        }
+
+        img {
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
