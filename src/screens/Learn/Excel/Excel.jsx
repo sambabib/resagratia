@@ -62,6 +62,8 @@ const content = [
     and more importantly have some fun along the way…. 
     Let’s get started
     `,
+    circle: 'circle',
+    border: 'border',
     tags: [
       {
         id: 11,
@@ -72,8 +74,6 @@ const content = [
         data: '1 project',
       },
     ],
-    circle: 'circle',
-    border: 'border',
   },
   {
     id: 2,
@@ -85,6 +85,8 @@ const content = [
     We shall introduce you to data analysis tools and functions that can be used to automate your workflow.. 
     Sound exciting? Let’s get started..
     `,
+    circle: 'circle',
+    border: 'border',
     tags: [
       {
         id: 21,
@@ -95,8 +97,6 @@ const content = [
         data: '2 projects',
       },
     ],
-    circle: 'circle',
-    border: 'border',
   },
   {
     id: 3,
@@ -107,6 +107,8 @@ const content = [
     and will help you to better position yourself for success within your organization. 
     You’ll develop skills and a perspective that will make you more productive, 
     and allow you to become a valuable asset to your organization.`,
+    circle: 'circle',
+    border: 'border',
     tags: [
       {
         id: 31,
@@ -117,8 +119,6 @@ const content = [
         data: '2 projects',
       },
     ],
-    circle: 'circle',
-    border: 'border',
   },
 ];
 
