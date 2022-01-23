@@ -286,8 +286,8 @@ const HomeContent = () => {
                 <div className='research__item__img'>
                   <img src={Banks} alt='by David McBee from Pexels' />
                 </div>
-                <div className='research__item__tag paid'>
-                  <p>Paid</p>
+                <div className='research__item__tag premium'>
+                  <p>Premium</p>
                 </div>
                 <div className='research__item__description'>
                   <h3 className='research__item__title'>

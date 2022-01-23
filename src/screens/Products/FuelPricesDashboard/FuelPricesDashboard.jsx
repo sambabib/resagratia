@@ -1,5 +1,5 @@
 // @components
-import FuelPricesTableau from '../../../dashboards/FuelPricesTableau';
+import FuelPricesTableau from '../../../components/dashboards/FuelPricesTableau';
 
 // @icons
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
@@ -7,6 +7,7 @@ import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRound
 // @assets
 import Electricity from '../../../assets/electricity-cables.jpg';
 import Banks from '../../../assets/dollar-bills.jpg';
+import Fuel from '../../../assets/petrol-hands.jpg';
 
 // @styling
 import './fuelpricesdashboard.scss';
@@ -16,12 +17,15 @@ const FuelPricesDashboard = () => {
     <div className='fuelprices'>
       <div className='fuelprices__container'>
         <div className='fuelprices__intro__container'>
+          <div className="fuelprices__header__img">
+            <img src={Fuel} alt="" />
+          </div>
           <div className='fuelprices__heading'>
             <h3>Fuel Prices in Nigeria</h3>
           </div>
           <div className='fuelprices__intro__text'>
             <p>
-              The price of diesel in Nigeria is 289.4 naira per litre. This
+              The price of diesel in Nigeria is now 289.4 naira per litre. This
               represents a 28.4% increase in diesel price per litre since
               January 2021. The price of petrol is more stable at 165.8 naira
               per litre while there has been a significant increase in the price
@@ -103,8 +107,8 @@ const FuelPricesDashboard = () => {
                   <div className='other__dashboards__item__img'>
                     <img src={Banks} alt='by David McBee from Pexels' />
                   </div>
-                  <div className='other__dashboards__item__tag paid'>
-                    <p>Paid</p>
+                  <div className='other__dashboards__item__tag premium'>
+                    <p>Premium</p>
                   </div>
                   <div className='other__dashboards__item__description'>
                     <h3 className='other__dashboards__item__title'>

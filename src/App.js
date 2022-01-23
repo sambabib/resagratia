@@ -16,15 +16,24 @@ const App = () => {
 
   return (
     <>
-      {location.pathname === '/signin' || location.pathname === '/signup'  ? null : (<NavBar />)}
+      {location.pathname === '/signin' ||
+      location.pathname === '/signup' ? null : (
+        <NavBar />
+      )}
       <Routes>
         <Route path='/' element={<HomeContent />} />
         <Route path='signin' element={<SignIn />} />
         <Route path='signup' element={<SignUp />} />
         <Route path='/learn/excel' element={<Excel />} />
-        <Route path='/products/fuel_prices_in_nigeria' element={<FuelPricesDashboard />} />
+        <Route
+          path='/products/fuel_prices_in_nigeria'
+          element={<FuelPricesDashboard />}
+        />
       </Routes>
-      {location.pathname === '/signin' || location.pathname === '/signup'  ? null : (<Footer />)}
+      {location.pathname === '/signin' ||
+      location.pathname === '/signup' ? null : (
+        <Footer />
+      )}
     </>
   );
 };

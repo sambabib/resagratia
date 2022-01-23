@@ -45,7 +45,16 @@ const NavBar = () => {
       ) : (
         <div className='navbar'>
           <div className='navbar__items'>
-            <div className='navbar__menu__container'>
+            <div
+              className='navbar__menu__container'
+              onMouseLeave={() =>
+                setState({
+                  menu1: false,
+                  menu2: false,
+                  menu3: false,
+                })
+              }
+            >
               <div className='navbar__logo'>
                 <Link to='/'>
                   <img src={resaLogo} alt='resagratia logo' />
@@ -64,21 +73,21 @@ const NavBar = () => {
                       state.menu1 ? 'active__arrow' : 'arrow__icon'
                     }`}
                   />
+                  {state.menu1 ? (
+                    <div
+                      className='navbar__submenu learn'
+                      onMouseLeave={() => setState({ menu1: false })}
+                    >
+                      <p>Power BI</p>
+                      <p>Tableau</p>
+                      <p>SQL</p>
+                      <Link to='/learn/excel'>
+                        <p>Microsoft Excel</p>
+                      </Link>
+                      <p>Book Personalized Training Session</p>
+                    </div>
+                  ) : null}
                 </div>
-                {state.menu1 ? (
-                  <div
-                    className='navbar__submenu learn'
-                    onMouseLeave={() => setState({ menu1: false })}
-                  >
-                    <p>Power BI</p>
-                    <p>Tableau</p>
-                    <p>SQL</p>
-                    <Link to='/learn/excel'>
-                      <p>Microsoft Excel</p>
-                    </Link>
-                    <p>Book Personalized Training Session</p>
-                  </div>
-                ) : null}
                 <div
                   className={`${state.menu2 ? 'active' : 'navbar__menu__item'}`}
                   onMouseEnter={() => setState({ menu2: true })}
@@ -89,19 +98,19 @@ const NavBar = () => {
                       state.menu2 ? 'active__arrow' : 'arrow__icon'
                     }`}
                   />
+                  {state.menu2 ? (
+                    <div
+                      className='navbar__submenu products'
+                      onMouseLeave={() => setState({ menu2: false })}
+                    >
+                      <p>Cost of Electricity in Nigeria</p>
+                      <Link to='/products/fuel_prices_in_nigeria'>
+                        <p>Fuel Prices in Nigeria</p>
+                      </Link>
+                      <p>Financial Performance of Banks in Nigeria</p>
+                    </div>
+                  ) : null}
                 </div>
-                {state.menu2 ? (
-                  <div
-                    className='navbar__submenu products'
-                    onMouseLeave={() => setState({ menu2: false })}
-                  >
-                    <p>Cost of Electricity in Nigeria</p>
-                    <Link to="/products/fuel_prices_in_nigeria">
-                      <p>Fuel Prices in Nigeria</p>
-                    </Link>
-                    <p>Financial Performance of Banks in Nigeria</p>
-                  </div>
-                ) : null}
                 <div
                   className={`${state.menu3 ? 'active' : 'navbar__menu__item'}`}
                   onMouseEnter={() => setState({ menu3: true })}
@@ -112,16 +121,16 @@ const NavBar = () => {
                       state.menu3 ? 'active__arrow' : 'arrow__icon'
                     }`}
                   />
+                  {state.menu3 ? (
+                    <div
+                      className='navbar__submenu resources'
+                      onMouseLeave={() => setState({ menu3: false })}
+                    >
+                      <p>Datasets</p>
+                      <p>Blog</p>
+                    </div>
+                  ) : null}
                 </div>
-                {state.menu3 ? (
-                  <div
-                    className='navbar__submenu resources'
-                    onMouseLeave={() => setState({ menu3: false })}
-                  >
-                    <p>Datasets</p>
-                    <p>Blog</p>
-                  </div>
-                ) : null}
               </div>
             </div>
 
