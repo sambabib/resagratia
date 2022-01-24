@@ -59,3 +59,26 @@
     }
   }
 }
+
+// media queries
+@media (max-width: 620px) {
+  .carousel {
+    .carousel__container {
+      .carousel__user {
+        font-size: 18px !important;
+      }
+    }
+
+    .carousel__review {
+      p {
+        font-size: 18px !important;
+      }
+    }
+
+    .carousel__rating {
+      .star__icon {
+        font-size: 18px !important;
+      }
+    }
+  }
+}

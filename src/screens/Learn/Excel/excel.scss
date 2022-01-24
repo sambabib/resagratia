@@ -178,7 +178,7 @@
 
             .content__right__tags {
               display: flex;
-              margin: 1% 0 1% 5%;
+              margin: 1% 0 1% 0;
               gap: 8px;
               width: fit-content;
 
@@ -455,5 +455,168 @@
   p {
     font-family: 'Nunito', sans-serif;
     letter-spacing: -1px;
+  }
+}
+
+// media queries
+@media (max-width: 620px) {
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  .excel {
+    .excel__container {
+      width: 100%;
+
+      .title__container {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        height: fit-content;
+
+        // title
+        .title__description {
+          width: 100%;
+
+          .title__description__paragraph {
+            width: 100%;
+            padding-top: 8px;
+
+            p {
+              font-size: 18px !important;
+            }
+          }
+        }
+
+        .title__tags {
+          p {
+            font-size: 14px !important;
+          }
+        }
+
+        .title__media {
+          width: 100%;
+
+          .title__media__container {
+            .media__container {
+              align-items: center;
+
+              .media__getstarted__button {
+                padding: 16px 64px;
+
+                p {
+                  font-size: 16px !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    // content and tutors
+    .content__and__tutors {
+      padding: 16px !important;
+      height: fit-content !important;
+
+      .content__and__tutors__items {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content__items__container {
+        width: 100% !important;
+        height: fit-content !important;
+
+        .content__items {
+          width: inherit !important;
+        }
+
+        .content__right__heading {
+          h3 {
+            font-size: 20px !important;
+          }
+        }
+
+        .content__right__paragraph {
+          p {
+            font-size: 16px !important;
+          }
+        }
+
+        .border {
+          height: 250px !important;
+        }
+
+        .content__right__tags {
+          margin: 5% 0 !important;
+
+          p {
+            font-size: 14px !important;
+          }
+        }
+      }
+
+      .content__heading {
+        padding-bottom: 8px !important;
+      }
+
+      .tutors {
+        width: 100% !important;
+
+        .tutors__container {
+          .tutors__heading {
+            padding-bottom: 8px !important;
+          }
+
+          .tutors__description__container {
+            .tutor__img {
+              width: 50px !important;
+              height: 50px !important;
+            }
+          }
+
+          .tutor__info {
+            .tutor__name {
+              h3 {
+                font-size: 20px !important;
+              }
+            }
+
+            .tutor__job__title {
+              p {
+                font-size: 16px !important;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // additional courses
+    .additional__courses {
+      height: fit-content !important;
+      padding: 32px 16px !important;
+    }
+    
+    // organizations
+    .organizations {
+      padding: 16px !important;
+      height: fit-content !important;
+
+      .organizations__container {
+        height: fit-content !important;
+
+        .organizations__logos__container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: flex-start !important;
+        }
+      }
+    }
   }
 }
