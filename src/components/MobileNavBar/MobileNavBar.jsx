@@ -12,6 +12,65 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 // @styling
 import './mobilenavbar.scss';
 
+const learnMenu = [
+  {
+    id: 1,
+    title: 'Power Bi',
+    link: '/learn/excel',
+  },
+  {
+    id: 2,
+    title: 'Tableau',
+    link: '/learn/excel',
+  },
+  {
+    id: 3,
+    title: 'SQL',
+    link: '/learn/excel',
+  },
+  {
+    id: 4,
+    title: 'Microsoft Excel',
+    link: '/learn/excel',
+  },
+  {
+    id: 5,
+    title: 'Book Personalized Training Session',
+    link: '/learn/excel',
+  },
+];
+
+const productsMenu = [
+  {
+    id: 1,
+    title: 'Cost of Electricity in Nigeria',
+    link: '/products/fuel_prices_in_nigeria',
+  },
+  {
+    id: 2,
+    title: 'Fuel Prices in Nigeria',
+    link: '/products/fuel_prices_in_nigeria',
+  },
+  {
+    id: 3,
+    title: 'Financial Perfomance of Banks in Nigeria',
+    link: '/products/fuel_prices_in_nigeria',
+  },
+];
+
+const researchMenu = [
+  {
+    id: 1,
+    title: 'Datasets',
+    link: '/products/fuel_prices_in_nigeria',
+  },
+  {
+    id: 2,
+    title: 'Blog',
+    link: '/products/fuel_prices_in_nigeria',
+  },
+];
+
 const MobileNavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -99,28 +158,33 @@ const MobileNavBar = () => {
               <div className='menu__element__item'>
                 <p>Learn</p>
                 <ul className='mobile__submenu'>
-                  <li>Power BI</li>
-                  <li>Tableau</li>
-                  <li>SQL</li>
-                  <li>Microsoft Excel</li>
-                  <li>Book Personalized Training Session</li>
+                  {learnMenu.map((item) => (
+                    <Link to={item.link} onClick={() => setMenuOpen(false)}>
+                      <li key={item.id}>{item.title}</li>
+                    </Link>
+                  ))}
                 </ul>
               </div>
 
               <div className='menu__element__item'>
                 <p>Product</p>
                 <ul className='mobile__submenu'>
-                  <li>Cost of Electricity in Nigeria</li>
-                  <li>Fuel Prices in Nigeria</li>
-                  <li>Financial Performance of Banks in Nigeria</li>
+                  {productsMenu.map((item) => (
+                    <Link to={item.link} onClick={() => setMenuOpen(false)}>
+                      <li key={item.id}>{item.title}</li>
+                    </Link>
+                  ))}
                 </ul>
               </div>
 
               <div className='menu__element__item'>
                 <p>Research</p>
                 <ul className='mobile__submenu'>
-                  <li>Datasets</li>
-                  <li>Blog</li>
+                  {researchMenu.map((item) => (
+                    <Link to={item.link} onClick={() => setMenuOpen(false)}>
+                      <li key={item.id}>{item.title}</li>
+                    </Link>
+                  ))}
                 </ul>
               </div>
             </div>

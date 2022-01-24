@@ -618,5 +618,13 @@
         }
       }
     }
+
+    .excel__carousel {
+      padding: 32px 16px !important;
+
+      .excel__carousel__container {
+        padding: 0 8px !important;
+      }
+    }
   }
 }
