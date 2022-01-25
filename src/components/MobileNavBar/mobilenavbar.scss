@@ -50,7 +50,7 @@
     background: #fff;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
       rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    overflow-y: auto !important;
+    overflow: auto !important;
 
     .navbar__element__logo__container {
       display: flex;
@@ -138,6 +138,8 @@
       flex-direction: column;
       gap: 32px;
       margin: 16px 0;
+      border: 2px solid red;
+      overflow: auto;
 
       .menu__element__item {
         display: flex;
