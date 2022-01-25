@@ -33,3 +33,17 @@
     color: #fff;
   }
 }
+
+@media (min-width: 625px) and (max-width: 980px) {
+  .faqlist__question {
+    h3 {
+      font-size: 18px !important;
+    }
+  }
+
+  .faqlist__answer {
+    p {
+      font-size: 16px !important;
+    }
+  }
+}
