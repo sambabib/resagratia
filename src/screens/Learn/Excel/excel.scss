@@ -28,7 +28,6 @@
           h3 {
             color: #111;
             font-size: 30px;
-            // text-transform: uppercase;
           }
         }
 
@@ -506,7 +505,9 @@
               align-items: center;
 
               .media__getstarted__button {
-                padding: 16px 64px;
+                width: 100% !important;
+                padding: 18px 0 !important;
+                text-align: center !important;
 
                 p {
                   font-size: 16px !important;
@@ -517,7 +518,7 @@
         }
       }
     }
-    
+
     // content and tutors
     .content__and__tutors {
       padding: 16px !important;
@@ -602,7 +603,7 @@
       height: fit-content !important;
       padding: 32px 16px !important;
     }
-    
+
     // organizations
     .organizations {
       padding: 16px !important;
@@ -619,11 +620,178 @@
       }
     }
 
+    //carousel 
     .excel__carousel {
       padding: 32px 16px !important;
 
       .excel__carousel__container {
         padding: 0 8px !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 625px) and (max-width: 980px) {
+  .excel {
+    .excel__container {
+      // title
+      .title__container {
+        padding: 16px !important;
+        height: fit-content !important;
+
+        .title__description {
+          width: 60% !important;
+
+          .title__description__paragraph {
+            p {
+              font-size: 18px !important;
+            }
+          }
+        }
+
+        .title__tags {
+          p {
+            font-size: 15px !important;
+          }
+        }
+      }
+
+      .title__media {
+        width: 40% !important;
+        height: fit-content !important;
+
+        .title__media__container {
+          .media__container {
+            align-items: center !important;
+
+            .media__getstarted__button {
+              width: 100% !important;
+              padding: 18px 0 !important;
+              text-align: center !important;
+            }
+          }
+        }
+      }
+
+      // content and tutors
+      .content__and__tutors {
+        height: fit-content !important;
+        padding: 16px !important;
+
+        .content__and__tutors__container {
+          .content__and__tutors__items {
+            display: flex;
+            flex-direction: column;
+
+            .content__items__container {
+              width: 100% !important;
+
+              .content__items {
+                width: inherit !important;
+
+                .content__right__heading {
+                  h3 {
+                    font-size: 24px !important;
+                  }
+                }
+
+                .content__right__paragraph {
+                  p {
+                    font-size: 18px !important;
+                  }
+                }
+
+                .content__right__tags {
+                  p {
+                    font-size: 15px !important;
+                  }
+                }
+              }
+
+              .border {
+                height: 140px !important;
+              }
+            }
+
+            .tutors {
+              width: 100% !important;
+
+              .tutors__container {
+                .tutors__description__container {
+                  display: flex;
+                  flex-direction: row !important;
+                  justify-content: space-between;
+                  padding: 32px 16px!important;
+
+                  .tutor__img {
+                    width: 50px !important;
+                    height: 50px !important;
+                  }
+
+                  .tutor__info {
+                    .tutor__name {
+                      h3 {
+                        font-size: 18px !important;
+                      }
+                    }
+
+                    .tutor__job__title {
+                      p {
+                        font-size: 15px !important;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // additional courses
+      .additional__courses {
+        padding: 32px 16px !important;
+
+        .additional__courses__container {
+          height: fit-content !important;
+
+          .additional__courses__item {
+            h3 {
+              font-size: 18px !important;
+            }
+          }
+
+          .additional__courses__details {
+            p {
+              font-size: 16px !important;
+            }
+          }
+
+          .keyboard__down__icon,
+          .keyboard__right__icon {
+            font-size: 22px !important;
+          }
+        }
+      }
+
+      // organizations
+      .organizations {
+        padding: 32px 16px !important;
+        height: fit-content;
+
+        .organizations__container {
+          height: fit-content;
+
+        }
+      }
+
+      // carousel
+      .excel__carousel {
+        padding: 32px 16px !important;
+  
+        .excel__carousel__container {
+          padding: 0 8px !important;
+        }
       }
     }
   }
