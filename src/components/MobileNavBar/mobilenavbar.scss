@@ -93,12 +93,13 @@
         color: #111;
         padding: 24px 0px;
         width: 100%;
+        font-size: 18px;
 
         &::placeholder {
           letter-spacing: -1px;
           font-family: 'Nunito', sans-serif;
-          font-size: 15px;
-          font-weight: 600;
+          font-size: 14px;
+          font-weight: 500;
           color: #808080;
         }
       }
