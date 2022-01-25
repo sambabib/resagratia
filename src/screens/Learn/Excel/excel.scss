@@ -100,7 +100,7 @@
 
     // content & tutors
     .content__and__tutors {
-      height: 640px;
+      height: 690px;
       padding: 16px 0;
 
       .content__and__tutors__container {
@@ -626,6 +626,22 @@
 
       .excel__carousel__container {
         padding: 0 8px !important;
+      }
+    }
+
+    // join excel
+    .join__excel {
+      width: 100% !important;
+      padding: 16px !important;
+
+      .join__excel__container {
+        width: inherit !important;
+
+        .join__excel__button {
+          text-align: center;
+          padding: 18px 0 !important;
+          width: 100% !important;
+        }
       }
     }
   }

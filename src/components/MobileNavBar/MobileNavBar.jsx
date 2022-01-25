@@ -159,8 +159,8 @@ const MobileNavBar = () => {
                 <p>Learn</p>
                 <ul className='mobile__submenu'>
                   {learnMenu.map((item) => (
-                    <Link to={item.link} onClick={() => setMenuOpen(false)}>
-                      <li key={item.id}>{item.title}</li>
+                    <Link to={item.link} key={item.id} onClick={() => setMenuOpen(false)}>
+                      <li>{item.title}</li>
                     </Link>
                   ))}
                 </ul>
@@ -170,8 +170,8 @@ const MobileNavBar = () => {
                 <p>Product</p>
                 <ul className='mobile__submenu'>
                   {productsMenu.map((item) => (
-                    <Link to={item.link} onClick={() => setMenuOpen(false)}>
-                      <li key={item.id}>{item.title}</li>
+                    <Link to={item.link} key={item.id} onClick={() => setMenuOpen(false)}>
+                      <li>{item.title}</li>
                     </Link>
                   ))}
                 </ul>
@@ -181,8 +181,8 @@ const MobileNavBar = () => {
                 <p>Research</p>
                 <ul className='mobile__submenu'>
                   {researchMenu.map((item) => (
-                    <Link to={item.link} onClick={() => setMenuOpen(false)}>
-                      <li key={item.id}>{item.title}</li>
+                    <Link to={item.link} key={item.id} onClick={() => setMenuOpen(false)}>
+                      <li>{item.title}</li>
                     </Link>
                   ))}
                 </ul>

@@ -46,3 +46,21 @@
     letter-spacing: -1px;
   }
 }
+
+@media (max-width: 620px) {
+  .errorcomponent {
+    padding: 16px !important;
+    height: 100vh !important;
+
+    .errorcomponent__component {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .errorcomponent__img {
+        width: 580px !important;
+      }
+    }
+  }
+}
