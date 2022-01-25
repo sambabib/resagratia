@@ -664,6 +664,10 @@
           .media__container {
             align-items: center !important;
 
+            video {
+              width: 100% !important;
+            }
+
             .media__getstarted__button {
               width: 100% !important;
               padding: 18px 0 !important;
