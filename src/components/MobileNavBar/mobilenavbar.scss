@@ -39,7 +39,7 @@
 
   .mobile__navbar__elements {
     padding: 8px;
-    height: 100vh;
+    height: calc(100vh - 20px);
     z-index: 10000;
     border-radius: 4px;
     position: absolute;
