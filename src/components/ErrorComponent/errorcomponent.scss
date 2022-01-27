@@ -51,16 +51,13 @@
   .errorcomponent {
     padding: 16px !important;
     height: 100vh !important;
-
-    .errorcomponent__component {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      .errorcomponent__img {
-        width: 580px !important;
-      }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    P {
+      text-align: center;
     }
   }
+
 }

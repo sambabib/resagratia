@@ -7,10 +7,11 @@ const FuelPricesTableau = () => {
 
   useEffect(() => {
     const url =
-      'https://public.tableau.com/views/FuelPricesApp/FuelPrices?:language=en-US&:display_count=n&:origin=viz_share_link';
+      'https://public.tableau.com/views/FuelPricesApp/FuelPrices';
 
     const options = {
       showShareOptions: false,
+      hideToolBar: true,
     };
     const initViz = () => {
       new tableau.Viz(ref.current, url, options);

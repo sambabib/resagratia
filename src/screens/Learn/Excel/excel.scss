@@ -91,6 +91,7 @@
                 font-size: 14px;
                 font-weight: 700;
                 cursor: pointer;
+                color: #2b2c54;
               }
             }
           }
@@ -392,6 +393,10 @@
           border-radius: 4px;
           padding: 18px 100px;
           cursor: pointer;
+          
+          p {
+            font-size: 16px;
+          }
         }
       }
     }
@@ -481,12 +486,18 @@
         .title__description {
           width: 100%;
 
+          .title__description__heading {
+            h3 {
+              font-size: 26px !important;
+            }
+          }
+
           .title__description__paragraph {
             width: 100%;
             padding-top: 8px;
 
             p {
-              font-size: 18px !important;
+              font-size: 16px !important;
             }
           }
         }
@@ -511,6 +522,7 @@
 
                 p {
                   font-size: 16px !important;
+                  color: #2b2c54;
                 }
               }
             }
@@ -533,6 +545,12 @@
         width: 100% !important;
         height: fit-content !important;
 
+        .content__heading {
+          h3 {
+            font-size: 16px !important;
+          }
+        }
+
         .content__items {
           width: inherit !important;
         }
@@ -540,12 +558,6 @@
         .content__right__heading {
           h3 {
             font-size: 20px !important;
-          }
-        }
-
-        .content__right__paragraph {
-          p {
-            font-size: 16px !important;
           }
         }
 
@@ -572,6 +584,10 @@
         .tutors__container {
           .tutors__heading {
             padding-bottom: 8px !important;
+
+            h3 {
+              font-size: 16px !important;
+            }
           }
 
           .tutors__description__container {
@@ -584,13 +600,13 @@
           .tutor__info {
             .tutor__name {
               h3 {
-                font-size: 20px !important;
+                font-size: 18px !important;
               }
             }
 
             .tutor__job__title {
               p {
-                font-size: 16px !important;
+                font-size: 15px !important;
               }
             }
           }
@@ -602,20 +618,38 @@
     .additional__courses {
       height: fit-content !important;
       padding: 32px 16px !important;
+
+      .additional__courses__heading {
+        h3 {
+          font-size: 14px !important;
+        }
+      }
+
+      .additional__courses__item {
+        h3 {
+          font-weight: 300 !important;
+        }
+      }
     }
 
     // organizations
     .organizations {
       padding: 16px !important;
       height: fit-content !important;
+      width: 100% !important;
 
       .organizations__container {
         height: fit-content !important;
 
+        .organizations__heading {
+          font-size: 14px !important;
+        }
+
         .organizations__logos__container {
           display: flex;
+          width: 100% !important;
           flex-wrap: wrap;
-          justify-content: flex-start !important;
+          justify-content: center !important;
         }
       }
     }
@@ -627,6 +661,14 @@
       .excel__carousel__container {
         padding: 0 8px !important;
       }
+
+      .excel__carousel__heading {
+        font-size: 14px !important;
+      }
+
+      .excel__carousel__subheading {
+        font-size: 32px !important;
+      }
     }
 
     // join excel
@@ -637,12 +679,40 @@
       .join__excel__container {
         width: inherit !important;
 
+        h3 {
+          font-size: 32px !important;
+        }
+
+        p {
+          font-size: 18px !important;
+        }
+
         .join__excel__button {
           text-align: center;
           padding: 18px 0 !important;
           width: 100% !important;
+
+          p {
+            font-size: 16px !important;
+          }
         }
       }
+    }
+
+    .faq__heading {
+      font-size: 14px !important;
+    }
+
+    .faq__subheading {
+      font-size: 32px !important;
+    }
+
+    h3 {
+      font-size: 18px !important;
+    }
+
+    p {
+      font-size: 16px !important;
     }
   }
 }
