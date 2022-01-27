@@ -37,6 +37,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      gap: 16px;
       z-index: 10;
       height: 100%;
 
@@ -108,7 +109,7 @@
           color: #808080;
           position: absolute;
           right: 5%;
-          transform: translateY(70%);
+          transform: translateY(75%);
           cursor: pointer;
         }
 
@@ -193,7 +194,7 @@
     .signin__container {
       width: 100% !important;
       padding: 16px;
-
+      
       .one,
       .two,
       .background__img {
@@ -201,6 +202,8 @@
       }
 
       .form {
+        height: inherit !important;
+
         .form__logo {
           width: 150px !important;
         }
@@ -209,8 +212,12 @@
           width: 100% !important;
           padding: 28px !important;
 
+          .form__heading {
+            font-size: 24px !important;
+          }
+
           input {
-            font-size: 18px;
+            font-size: 16px !important;
 
             &::placeholder {
               font-size: 15px !important;
@@ -221,12 +228,8 @@
             color: #808080;
             position: absolute;
             right: 5%;
-            transform: translateY(70%);
+            transform: translateY(75%);
             cursor: pointer;
-          }
-
-          .form__heading {
-            font-size: 28px !important;
           }
 
           .form__forgot__password {
