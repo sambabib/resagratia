@@ -44,17 +44,17 @@ const productsMenu = [
   {
     id: 1,
     title: 'Cost of Electricity in Nigeria',
-    link: '/products/fuel_prices_in_nigeria',
+    link: '/products/fuel-prices-in-nigeria',
   },
   {
     id: 2,
     title: 'Fuel Prices in Nigeria',
-    link: '/products/fuel_prices_in_nigeria',
+    link: '/products/fuel-prices-in-nigeria',
   },
   {
     id: 3,
     title: 'Financial Perfomance of Banks in Nigeria',
-    link: '/products/fuel_prices_in_nigeria',
+    link: '/products/fuel-prices-in-nigeria',
   },
 ];
 
@@ -62,12 +62,12 @@ const researchMenu = [
   {
     id: 1,
     title: 'Datasets',
-    link: '/products/fuel_prices_in_nigeria',
+    link: '/products/fuel-prices-in-nigeria',
   },
   {
     id: 2,
     title: 'Blog',
-    link: '/products/fuel_prices_in_nigeria',
+    link: '/products/fuel-prices-in-nigeria',
   },
 ];
 
@@ -107,7 +107,7 @@ const MobileNavBar = () => {
 
       {/* show navbar elements */}
       {searchOpen ? (
-        <div className='mobile__navbar__elements'>
+        <div className='mobile__search__element'>
           <div className='navbar__element__logo__container'>
             <div className='navbar__element__logo'>
               <img src={Logo} alt='mobile logo' />

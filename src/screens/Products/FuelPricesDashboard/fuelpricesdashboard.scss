@@ -273,6 +273,14 @@
       }
     }
 
+    .tableau__dashboard__container {
+      border: 2px solid blue;
+      min-width: 100% !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .gainaccess {
       padding: 16px !important;
 
@@ -307,6 +315,16 @@
           justify-content: center;
         }
       }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 980px) {
+  .fuelprices {
+    .fuelprices__heading, 
+    .fuelprices__intro__text,
+    .fuelprices__bodytext {
+      padding: 0 16px !important;
     }
   }
 }

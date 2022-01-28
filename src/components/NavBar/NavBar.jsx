@@ -104,7 +104,7 @@ const NavBar = () => {
                       onMouseLeave={() => setState({ menu2: false })}
                     >
                       <p>Cost of Electricity in Nigeria</p>
-                      <Link to='/products/fuel_prices_in_nigeria'>
+                      <Link to='/products/fuel-prices-in-nigeria'>
                         <p>Fuel Prices in Nigeria</p>
                       </Link>
                       <p>Financial Performance of Banks in Nigeria</p>

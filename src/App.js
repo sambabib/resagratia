@@ -26,7 +26,7 @@ const App = () => {
         <Route path='signup' element={<SignUp />} />
         <Route path='/learn/excel' element={<Excel />} />
         <Route
-          path='/products/fuel_prices_in_nigeria'
+          path='/products/fuel-prices-in-nigeria'
           element={<FuelPricesDashboard />}
         />
       </Routes>
