@@ -1,6 +1,9 @@
 import { useEffect, useRef } from 'react';
 // import { useSelector } from 'react-redux';
 
+// @styling 
+import './fuelpricestableau.scss'
+
 const { tableau } = window;
 
 const FuelPricesTableau = () => {
@@ -26,11 +29,7 @@ const FuelPricesTableau = () => {
   return (
     <div
       ref={ref}
-      // style={
-      //   dashboardWidth <= 420
-      //     ? { width: '320px' }
-      //     : { width: '390px' }
-      // }
+    // style={dashboardWidth > 768 ? { width: '100vw'} : {} }
     ></div>
   );
 };
