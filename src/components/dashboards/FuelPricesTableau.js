@@ -26,11 +26,11 @@ const FuelPricesTableau = () => {
   return (
     <div
       ref={ref}
-      style={
-        dashboardWidth <= 420
-          ? { width: '320px', height: '527px', margin: '0 auto' }
-          : { width: '390px' }
-      }
+      // style={
+      //   dashboardWidth <= 420
+      //     ? { width: '320px' }
+      //     : { width: '390px' }
+      // }
     ></div>
   );
 };
