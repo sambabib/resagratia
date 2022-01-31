@@ -1,15 +1,15 @@
 import { useEffect, useRef } from 'react';
 // import { useSelector } from 'react-redux';
 
-const { tableau } = window;
+// const { tableau } = window;
 
 const FuelPricesTableau = () => {
-  const ref = useRef(null);
+  // const ref = useRef(null);
 
   // const dashboardWidth = useSelector((state) => state.windowDimension.width);
 
   useEffect(() => {
-    const url = 'https://public.tableau.com/views/FuelPricesApp/FuelPrices';
+    // const url = 'https://public.tableau.com/views/FuelPricesApp/FuelPrices';
 
     // const share = document.getElementsByClassName('.tabToolbarButtonImg.tab-icon-share');
     // share[0].parentNode.removeChild(share[0]);
