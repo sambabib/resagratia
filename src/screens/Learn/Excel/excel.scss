@@ -393,7 +393,12 @@
           border-radius: 4px;
           padding: 18px 100px;
           cursor: pointer;
-          
+
+          &:hover {
+            border: #2a2da3;
+            background: #15175c;
+          }
+
           p {
             font-size: 16px;
           }
@@ -912,7 +917,7 @@
   }
 }
 
-@media (min-width: 280px) and (max-width: 320px) {
+@media (min-width: 280px) and (max-width: 380px) {
   .tag__courses,
   .tag__hours,
   .tag__projects,

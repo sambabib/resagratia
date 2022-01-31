@@ -9,6 +9,8 @@ import FormLogo from '../../assets/logo-white.svg';
 // @icons
 import VisibilityRoundedIcon from '@mui/icons-material/VisibilityRounded';
 import VisibilityOffRoundedIcon from '@mui/icons-material/VisibilityOffRounded';
+import ErrorRoundedIcon from '@mui/icons-material/ErrorRounded';
+import KeyboardBackspaceRoundedIcon from '@mui/icons-material/KeyboardBackspaceRounded';
 
 // @styling
 import './signup.scss';
@@ -43,6 +45,12 @@ const SignUp = () => {
 
   return (
     <div className='signup'>
+      <Link to='/'>
+        <div className='back__button'>
+          <KeyboardBackspaceRoundedIcon className='back__icon' />
+          <p>Back to Home</p>
+        </div>
+      </Link>
       <div className='signup__container'>
         <div className='background__img one'></div>
         <div className='background__img two'></div>
@@ -51,9 +59,12 @@ const SignUp = () => {
             <img src={FormLogo} alt='resa logo' />
           </div>
           <form className='form__container' onSubmit={formik.handleSubmit}>
-            <h3 className='form__heading'>
-              Create your free account to get started
-            </h3>
+            <div className='form__text'>
+              <h3 className='form__heading'>Create your free account</h3>
+              <p className='form__subheading'>
+                Hey, there! Sign up with your email to get started.
+              </p>
+            </div>
             <label htmlFor='email' />
             <input
               id='email'
@@ -80,7 +91,7 @@ const SignUp = () => {
                 name='password'
                 type={`${showPassword ? 'text' : 'password'}`}
                 autoComplete='off'
-                placeholder='Password'
+                placeholder='Your password'
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.password}
@@ -106,6 +117,21 @@ const SignUp = () => {
             {formik.touched.password && formik.errors.password ? (
               <div className='form__errors'>{formik.errors.password}</div>
             ) : null}
+
+            <div className='form__hints'>
+              <div className='form__hints__details'>
+                <ErrorRoundedIcon className='info__icon' />
+                <p>Password must contain at least 8 characters.</p>
+              </div>
+
+              <div className='form__hints__details'>
+                <ErrorRoundedIcon className='info__icon' />
+                <p>
+                  Password must contain at least one uppercase, one number and
+                  one special case character.
+                </p>
+              </div>
+            </div>
 
             <button
               type='submit'

@@ -10,6 +10,7 @@ import FormLogo from '../../assets/logo.svg';
 // @icons
 import VisibilityRoundedIcon from '@mui/icons-material/VisibilityRounded';
 import VisibilityOffRoundedIcon from '@mui/icons-material/VisibilityOffRounded';
+import KeyboardBackspaceRoundedIcon from '@mui/icons-material/KeyboardBackspaceRounded';
 
 // @styling
 import './signin.scss';
@@ -44,6 +45,12 @@ const SignIn = () => {
 
   return (
     <motion.div className='signin'>
+      <Link to='/'>
+        <div className='back__button'>
+          <KeyboardBackspaceRoundedIcon className='back__icon' />
+          <p>Back to Home</p>
+        </div>
+      </Link>
       <div className='signin__container'>
         <div className='background__img one'></div>
         <div className='background__img two'></div>
@@ -52,7 +59,12 @@ const SignIn = () => {
             <img src={FormLogo} alt='resa logo' />
           </div>
           <form className='form__container' onSubmit={formik.handleSubmit}>
-            <h3 className='form__heading'>Sign in</h3>
+            <div className='form__text'>
+              <h3 className='form__heading'>Sign in</h3>
+              <p className='form__subheading'>
+                Enter your email and password to continue.
+              </p>
+            </div>
             <label htmlFor='email' />
             <input
               id='email'
@@ -79,7 +91,7 @@ const SignIn = () => {
                 name='password'
                 type={`${showPassword ? 'text' : 'password'}`}
                 autoComplete='off'
-                placeholder='Password'
+                placeholder='Your password'
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.password}

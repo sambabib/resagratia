@@ -35,6 +35,8 @@
 
     .tableau__dashboard {
       height: 580px;
+      display: flex;
+      justify-content: center;
 
       .tableau__dashboard__container {
         max-width: 800px;
@@ -71,7 +73,7 @@
     .gainaccess {
       background: #000;
       height: 250px;
-      padding: 32px 0;
+      padding: 16px 0;
 
       .gainaccess__container {
         max-width: 1100px;
@@ -87,8 +89,7 @@
         .gainaccess__heading {
           h3 {
             color: #ff8c00;
-            font-size: 14px;
-            text-transform: uppercase;
+            font-size: 32px;
             padding: 16px 0 16px 0;
           }
         }
@@ -96,7 +97,7 @@
         .gainaccess__text {
           h3 {
             color: #fff;
-            font-size: 16px;
+            font-size: 18px;
             padding-bottom: 32px;
             font-weight: 300;
           }
@@ -111,6 +112,10 @@
             border-radius: 4px;
             font-weight: 700;
             cursor: pointer;
+
+            &:hover {
+              background: #d97802;
+            }
           }
         }
       }
@@ -285,7 +290,6 @@
 
       .gainaccess__button {
         width: 100% !important;
-        padding: 18px 0 !important;
         text-align: center !important;
 
         p {
@@ -318,9 +322,9 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 980px) {
+@media (min-width: 625px) and (max-width: 980px) {
   .fuelprices {
-    .fuelprices__heading, 
+    .fuelprices__heading,
     .fuelprices__intro__text,
     .fuelprices__bodytext {
       padding: 0 16px !important;
@@ -329,6 +333,49 @@
     .tableau__dashboard {
       display: flex;
       justify-content: center !important;
+    }
+
+    .gainaccess {
+      padding: 16px !important;
+      width: 100% !important;
+
+      .gainaccess__content {
+        width: inherit !important;
+      }
+    }
+
+    .other__dashboards {
+      padding: 32px 16px !important;
+      height: fit-content !important;
+
+      .other__dashboards__container {
+        width: 100% !important;
+        
+        .other__dashboards__dashboard {
+          display: flex;
+          flex-wrap: wrap !important;
+          justify-content: center;
+          align-items: flex-start;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 982px) and (max-width: 1110px) {
+  .other__dashboards {
+    padding: 32px 16px !important;
+  }
+}
+
+@media (min-width: 280px) and (max-width: 380px) {
+  .gainaccess {
+    padding: 16px !important;
+
+    .gainaccess__container {
+      .gainaccess__text {
+        text-align: center !important;
+      }
     }
   }
 }
