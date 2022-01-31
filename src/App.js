@@ -10,6 +10,7 @@ import SignIn from './screens/SignIn/SignIn';
 import SignUp from './screens/SignUp/SignUp';
 import Excel from './screens/Learn/Excel/Excel';
 import FuelPricesDashboard from './screens/Products/FuelPricesDashboard/FuelPricesDashboard';
+import Datasets from './screens/Resources/Datasets/Datasets';
 
 const App = () => {
   const location = useLocation();
@@ -29,6 +30,7 @@ const App = () => {
           path='/products/fuel-prices-in-nigeria'
           element={<FuelPricesDashboard />}
         />
+        <Route path='/resources/datasets' element={<Datasets />} />
       </Routes>
       {location.pathname === '/signin' ||
       location.pathname === '/signup' ? null : (

@@ -508,10 +508,11 @@
     .courses {
       height: fit-content;
       background: #000;
-      padding-bottom: 32px !important;
+      padding-bottom: 24px !important;
 
       .courses__container {
         width: 100%;
+        height: fit-content !important;
         padding: 16px;
         display: flex;
         flex-direction: column-reverse;

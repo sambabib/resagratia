@@ -11,7 +11,14 @@
     position: absolute;
     left: 5%;
     top: 4%;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    padding: 8px 16px;
     cursor: pointer;
+
+    &:hover {
+      background: #808080;
+    }
 
     .back__icon {
       color: #fff;
@@ -98,7 +105,7 @@
         input {
           padding: 16px 24px;
           outline: none;
-          border: 2px solid rgba($color: #808080, $alpha: 0.5);
+          border: 1px solid rgba($color: #808080, $alpha: 0.5);
           border-radius: 4px;
           width: 100%;
           font-size: 16px;
@@ -110,7 +117,7 @@
           }
 
           &:focus {
-            border: 2px solid #ff8c00;
+            border: 1px solid #ff8c00;
           }
         }
 
@@ -219,7 +226,7 @@
   }
 
   .form__error__border {
-    border: 2px solid red !important;
+    border: 1px solid red !important;
   }
 }
 

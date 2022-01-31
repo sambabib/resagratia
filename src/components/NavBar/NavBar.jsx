@@ -126,7 +126,9 @@ const NavBar = () => {
                       className='navbar__submenu resources'
                       onMouseLeave={() => setState({ menu3: false })}
                     >
-                      <p>Datasets</p>
+                      <Link to='/resources/datasets'>
+                        <p>Datasets</p>
+                      </Link>
                       <p>Blog</p>
                     </div>
                   ) : null}
@@ -149,17 +151,17 @@ const NavBar = () => {
               </div>
 
               <div className='navbar__auth'>
-                <div className='navbar__signin__button'>
-                  <Link to='signin'>
+                <Link to='signin'>
+                  <div className='navbar__signin__button'>
                     <p>Sign in</p>
-                  </Link>
-                </div>
+                  </div>
+                </Link>
 
-                <div className='navbar__getstarted__button'>
-                  <Link to='signup'>
+                <Link to='signup'>
+                  <div className='navbar__getstarted__button'>
                     <p>Get Started</p>
-                  </Link>
-                </div>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
