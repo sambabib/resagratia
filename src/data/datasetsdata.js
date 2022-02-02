@@ -4,7 +4,7 @@ import FoodNigeria from '../assets/food-nigeria.jpg';
 import CryptoPunk from '../assets/cryptopunk.jpg';
 import Films from '../assets/1000-films.jpg';
 
-export const datasetsdata = [
+export const datasets = [
   {
     id: 1,
     title: `UK Petrol Prices`,

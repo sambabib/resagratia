@@ -1,9 +1,11 @@
+import { Outlet } from 'react-router-dom';
+
 // @components
 import SearchField from '../../../components/SearchField/SearchField';
 import DatasetsCard from '../../../components/DatasetsCard/DatasetsCard';
 
 // @data
-import { datasetsdata } from '../../../data/datasetsdata';
+import { datasets } from '../../../data/datasetsdata';
 
 // @assets
 import DatasetsImg from '../../../assets/datasets-hero.jpg';
@@ -41,8 +43,8 @@ const Datasets = () => {
         <div className='datasets__search__container'>
           <SearchField
             type='password'
-            id='search'
-            name='search'
+            id='searcfield'
+            name='searchfield'
             placeholder='Search datasets'
           />
         </div>
@@ -50,17 +52,20 @@ const Datasets = () => {
 
       <div className='datasets__card'>
         <div className='datasets__card__container'>
-          {datasetsdata.map((item) => (
+          {datasets.map((item) => (
             <DatasetsCard
               title={item.title}
               size={item.size}
               tag={item.tag}
               img={item.img}
               alt={item.alt}
+              key={item.id}
+              id={item.id}
             />
           ))}
         </div>
       </div>
+      <Outlet />
     </div>
   );
 };

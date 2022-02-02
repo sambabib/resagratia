@@ -10,7 +10,8 @@ import FormLogo from '../../assets/logo.svg';
 // @icons
 import VisibilityRoundedIcon from '@mui/icons-material/VisibilityRounded';
 import VisibilityOffRoundedIcon from '@mui/icons-material/VisibilityOffRounded';
-import KeyboardBackspaceRoundedIcon from '@mui/icons-material/KeyboardBackspaceRounded';
+import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 
 // @styling
 import './signin.scss';
@@ -47,8 +48,8 @@ const SignIn = () => {
     <motion.div className='signin'>
       <Link to='/'>
         <div className='back__button'>
-          <KeyboardBackspaceRoundedIcon className='back__icon' />
-          <p>Back to Home</p>
+          <ArrowBackIosNewRoundedIcon className='back__icon' />
+          <HomeRoundedIcon className='home__icon' />
         </div>
       </Link>
       <div className='signin__container'>

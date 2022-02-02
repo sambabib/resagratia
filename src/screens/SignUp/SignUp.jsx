@@ -10,7 +10,8 @@ import FormLogo from '../../assets/logo-white.svg';
 import VisibilityRoundedIcon from '@mui/icons-material/VisibilityRounded';
 import VisibilityOffRoundedIcon from '@mui/icons-material/VisibilityOffRounded';
 import ErrorRoundedIcon from '@mui/icons-material/ErrorRounded';
-import KeyboardBackspaceRoundedIcon from '@mui/icons-material/KeyboardBackspaceRounded';
+import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 
 // @styling
 import './signup.scss';
@@ -47,8 +48,8 @@ const SignUp = () => {
     <div className='signup'>
       <Link to='/'>
         <div className='back__button'>
-          <KeyboardBackspaceRoundedIcon className='back__icon' />
-          <p>Back to Home</p>
+          <ArrowBackIosNewRoundedIcon className='back__icon' />
+          <HomeRoundedIcon className='home__icon' />
         </div>
       </Link>
       <div className='signup__container'>

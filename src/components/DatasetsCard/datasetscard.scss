@@ -40,6 +40,10 @@
         align-items: center;
         gap: 8px;
 
+        p {
+          color: #2b2c54;
+        }
+
         .tag__icon,
         .cloud__icon {
           color: #2b2c54;
@@ -53,5 +57,9 @@
   h3 {
     font-size: 13px;
     color: #111;
+  }
+
+  a {
+    text-decoration: none;
   }
 }

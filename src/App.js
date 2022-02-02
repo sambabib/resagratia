@@ -4,6 +4,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
 import HomeContent from './components/HomeContent/HomeContent';
+import DatasetsItem from './components/DatasetsItem/DatasetsItem';
 
 // screens
 import SignIn from './screens/SignIn/SignIn';
@@ -25,12 +26,13 @@ const App = () => {
         <Route path='/' element={<HomeContent />} />
         <Route path='signin' element={<SignIn />} />
         <Route path='signup' element={<SignUp />} />
-        <Route path='/learn/excel' element={<Excel />} />
+        <Route path='learn/excel' element={<Excel />} />
         <Route
-          path='/products/fuel-prices-in-nigeria'
+          path='products/fuel-prices-in-nigeria'
           element={<FuelPricesDashboard />}
         />
-        <Route path='/resources/datasets' element={<Datasets />} />
+        <Route path='resources/datasets' element={<Datasets />} />
+        <Route path='resources/datasets/:id' element={<DatasetsItem />} />
       </Routes>
       {location.pathname === '/signin' ||
       location.pathname === '/signup' ? null : (
