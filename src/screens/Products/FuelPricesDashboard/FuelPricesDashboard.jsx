@@ -10,7 +10,7 @@ import Banks from '../../../assets/dollar-bills.jpg';
 import Fuel from '../../../assets/petrol-hands.jpg';
 
 // @data
-import { fuelpricesdata } from '../../../data/fuelpricesdata';
+import { paragraph1, paragraph2, paragraph3, paragraph4 } from '../../../data/fuelpricesdata';
 
 // @styling
 import './fuelpricesdashboard.scss';
@@ -48,9 +48,10 @@ const FuelPricesDashboard = () => {
         <div className='fuelprices__bodytext'>
           <div className='fuelprices__bodytext__container'>
             <div className='fuelprices__bodytext__content'>
-              {fuelpricesdata.map((item, index) => (
-                  <p key={index}>{item.paragraph}</p>
-              ))}
+              <p>{paragraph1}</p>
+              <p>{paragraph2.split('~').join('\n')}</p>
+              <p>{paragraph3}</p>
+              <p>{paragraph4}</p>
               <p>
                 Finally, with government plans to deregulate fuel prices and{' '}
                 <span>

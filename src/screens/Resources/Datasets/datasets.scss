@@ -1,0 +1,71 @@
+.datasets {
+  padding: 16px 0;
+
+  .datasets__hero__container {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    .datasets__hero {
+      display: flex;
+      justify-content: space-between;
+
+      .datasets__hero__text {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        .datasets__hero__heading {
+          h3 {
+            font-size: 30px;
+            color: #111;
+          }
+        }
+
+        .datasets__hero__paragraph {
+          p {
+            font-size: 16px;
+            line-height: 1.8;
+          }
+        }
+      }
+
+      .datasets__hero__img {
+        width: 400px;
+        height: 300px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+
+  .datasets__search {
+    .datasets__search__container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 0;
+    }
+  }
+
+  .datasets__card {
+    .datasets__card__container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+  }
+
+  h3,
+  p {
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: -1px;
+  }
+}

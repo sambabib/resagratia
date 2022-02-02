@@ -1,0 +1,38 @@
+.searchfield {
+  .searchfield__container {
+    background: #f1f3f4;
+    border-radius: 4px;
+
+    .searchfield__search {
+      display: flex;
+      align-items: center;
+      padding: 0 18px;
+
+      gap: 8px;
+
+      .searchfield__icon {
+        font-size: 24px;
+        color: #808080;
+      }
+
+
+      input {
+        outline: none;
+        border: none;
+        background: #f1f3f4;
+        padding: 24px 0;
+        color: #111;
+        width: 100%;
+
+        &::placeholder {
+          font-size: 15px;
+          font-family: 'Nunito', sans-serif;
+          font-weight: 200;
+          color: #808080;
+          padding: 4px;
+          letter-spacing: -1px;
+        }
+      }
+    }
+  }
+}
