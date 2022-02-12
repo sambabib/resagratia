@@ -4,6 +4,7 @@ import store from './redux/store';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
+import { AuthProvider } from './context/AuthContext';
 import './index.css';
 import App from './App';
 
@@ -11,9 +12,11 @@ ReactDOM.render(
   <React.StrictMode>
     <ErrorBoundary>
       <Provider store={store}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <AuthProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </AuthProvider>
       </Provider>
     </ErrorBoundary>
   </React.StrictMode>,

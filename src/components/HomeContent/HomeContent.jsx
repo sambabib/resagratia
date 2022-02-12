@@ -46,9 +46,9 @@ const HomeContent = () => {
             </div>
 
             {/* Join for free button */}
-            <div className='hero__button'>
-              <Link to='/signup'>Join for Free</Link>{' '}
-            </div>
+            <Link to='/signup'>
+              <div className='hero__button'>Join for Free</div>
+            </Link>
           </div>
 
           {/* Hero image */}
@@ -315,11 +315,11 @@ const HomeContent = () => {
                   Prefer to <span>talk to us</span>?
                 </p>
               </div>
-              <div className='join__for__free__button'>
-                <Link to='/signup'>
+              <Link to='/signup'>
+                <div className='join__for__free__button'>
                   <p>Join for Free</p>
-                </Link>
-              </div>
+                </div>
+              </Link>
             </div>
           </div>
         </div>

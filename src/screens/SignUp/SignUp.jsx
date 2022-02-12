@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
+import { useAuth } from '../../context/AuthContext';
 import * as Yup from 'yup';
 
 // @assets
@@ -18,9 +19,15 @@ import './signup.scss';
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const { signup } = useAuth();
+
+  const navigate = useNavigate();
+
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
-    console.log(showPassword);
   };
 
   const formik = useFormik({
@@ -28,6 +35,7 @@ const SignUp = () => {
       email: '',
       password: '',
     },
+
     validationSchema: Yup.object({
       email: Yup.string()
         .email('Invalid email address')
@@ -39,8 +47,20 @@ const SignUp = () => {
           'Password must contain at least 8 characters, one uppercase, one number and one special case character'
         ),
     }),
-    onSubmit: (values) => {
-      console.log(JSON.stringify(values, null, 2));
+    
+    onSubmit: async (values) => {
+      try {
+        setError('')
+        setLoading(true);
+        await signup(formik.values.email, formik.values.password)
+        // navigate('/get-user-information')
+      } catch {
+        setError('Failed to create an account')
+      }
+      setLoading(false);
+
+      console.log('email:', formik.values.email)
+      console.log('password:', formik.values.password)
     },
   });
 
@@ -143,7 +163,7 @@ const SignUp = () => {
                 formik.errors.email
               }
             >
-              Get Started
+              {loading ? 'Signing up...' : 'Get Started'}
             </button>
           </form>
 

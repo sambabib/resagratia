@@ -12,6 +12,7 @@ import SignUp from './screens/SignUp/SignUp';
 import Excel from './screens/Learn/Excel/Excel';
 import FuelPricesDashboard from './screens/Products/FuelPricesDashboard/FuelPricesDashboard';
 import Datasets from './screens/Resources/Datasets/Datasets';
+import AdditionalSignupInformation from './screens/AdditionalSignupInformation/AdditionalSignupInformation'
 
 const App = () => {
   const location = useLocation();
@@ -33,6 +34,7 @@ const App = () => {
         />
         <Route path='resources/datasets' element={<Datasets />} />
         <Route path='resources/datasets/:id' element={<DatasetsItem />} />
+        <Route path='get-user-information' element={<AdditionalSignupInformation />} />
       </Routes>
       {location.pathname === '/signin' ||
       location.pathname === '/signup' ? null : (

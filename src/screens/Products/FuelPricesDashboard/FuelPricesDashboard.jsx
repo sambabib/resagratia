@@ -10,7 +10,12 @@ import Banks from '../../../assets/dollar-bills.jpg';
 import Fuel from '../../../assets/petrol-hands.jpg';
 
 // @data
-import { paragraph1, paragraph2, paragraph3, paragraph4 } from '../../../data/fuelpricesdata';
+import {
+  paragraph1,
+  paragraph2,
+  paragraph3,
+  paragraph4,
+} from '../../../data/fuelpricesdata';
 
 // @styling
 import './fuelpricesdashboard.scss';

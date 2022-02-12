@@ -221,6 +221,7 @@
   }
 
   .form__errors {
+    margin-top: -10px;
     letter-spacing: -1px;
     font-family: 'Nunito', sans-serif;
     font-size: 12px;
@@ -228,7 +229,7 @@
   }
 
   .form__error__border {
-    border: px solid red !important;
+    border: 1px solid red !important;
   }
 }
 

@@ -16,7 +16,7 @@
 
       .datasetscard__img {
         width: 100% !important;
-        height: 180px;
+        height: 150px;
 
         img {
           width: 100%;
@@ -27,11 +27,18 @@
       }
 
       .datasetscard__details {
-        margin-top: 4px;
+        margin-top: 8px;
+        display: flex;
+        height: calc(100% - 170px);
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 8px;
+      }
+
+      .datasetscard__details__info {
         display: flex;
         flex-direction: column;
         gap: 8px;
-        padding: 8px;
       }
 
       .datasetscard__tag,
@@ -41,13 +48,30 @@
         gap: 8px;
 
         p {
-          color: #2b2c54;
+          color: #111;
         }
 
-        .tag__icon,
         .cloud__icon {
           color: #2b2c54;
           font-size: 16px;
+        }
+
+        .Entertainment,
+        .Economy,
+        .Internet {
+          font-size: 16px;
+        }
+
+        .Entertainment {
+          color: orange;
+        }
+
+        .Economy {
+          color: brown;
+        }
+
+        .Internet {
+          color: blue;
         }
       }
     }

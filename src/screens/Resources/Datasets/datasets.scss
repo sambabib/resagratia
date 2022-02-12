@@ -24,14 +24,14 @@
         .datasets__hero__paragraph {
           p {
             font-size: 16px;
-            line-height: 1.8;
+            line-height: 2.0;
           }
         }
       }
 
       .datasets__hero__img {
-        width: 400px;
-        height: 300px;
+        width: 300px;
+        height: 150px;
 
         img {
           width: 100%;
@@ -52,6 +52,14 @@
   }
 
   .datasets__card {
+    .datasets__card__container__heading {
+      max-width: 1100px;
+      margin: 16px auto 0 auto;
+
+      h3 {
+        font-size: 20px;
+      }
+    }
     .datasets__card__container {
       max-width: 1100px;
       margin: 0 auto;

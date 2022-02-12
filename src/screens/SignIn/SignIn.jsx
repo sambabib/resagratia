@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
+import { useAuth } from '../../context/AuthContext';
 import { motion } from 'framer-motion';
 import * as Yup from 'yup';
 
@@ -18,6 +19,11 @@ import './signin.scss';
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const { login } = useAuth();
+
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
     console.log(showPassword);
@@ -28,6 +34,7 @@ const SignIn = () => {
       email: '',
       password: '',
     },
+
     validationSchema: Yup.object({
       email: Yup.string()
         .email('Invalid email address')
@@ -39,8 +46,16 @@ const SignIn = () => {
           'Password must contain at least 8 characters, one uppercase, one number and one special case character'
         ),
     }),
-    onSubmit: (values) => {
-      console.log(JSON.stringify(values, null, 2));
+
+    onSubmit: async (values) => {
+      try {
+        setError('')
+        setLoading(true);
+        await login(formik.values.email, formik.values.password)
+      } catch {
+        setError('Failed to create an account')
+      }
+      setLoading(false);
     },
   });
 

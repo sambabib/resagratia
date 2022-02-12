@@ -158,7 +158,9 @@
 
       .courses__description {
         width: 400px;
-        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
         .courses__description__title {
           text-transform: uppercase;
@@ -543,6 +545,7 @@
 
       .courses__description {
         max-width: 100%;
+        justify-content: flex-start !important;
 
         .courses__description__subheading {
           width: 100% !important;

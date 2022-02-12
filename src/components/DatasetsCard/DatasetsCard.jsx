@@ -22,13 +22,15 @@ const DatasetsCard = ({ title, size, tag, img, alt, id }) => {
                 <h3>{title}</h3>
               </div>
 
-              <div className='datasetscard__size'>
-                <CloudDownloadRoundedIcon className='cloud__icon' />
-                <p>{size}</p>
-              </div>
-              <div className='datasetscard__tag'>
-                <LocalOfferRoundedIcon className='tag__icon' />
-                <p>{tag}</p>
+              <div className='datasetscard__details__info'>
+                <div className='datasetscard__size'>
+                  <CloudDownloadRoundedIcon className='cloud__icon' />
+                  <p>{size}</p>
+                </div>
+                <div className='datasetscard__tag'>
+                  <LocalOfferRoundedIcon className={tag} />
+                  <p>{tag}</p>
+                </div>
               </div>
             </div>
           </div>

@@ -24,7 +24,7 @@ const Datasets = () => {
             </div>
             <div className='datasets__hero__paragraph'>
               <p>
-                Discover, Explore and Analyze quality free open data. For data
+                Discover, Explore and <br /> Analyze quality free open data. For data
                 science and visualization
               </p>
             </div>
@@ -42,7 +42,7 @@ const Datasets = () => {
       <div className='datasets__search'>
         <div className='datasets__search__container'>
           <SearchField
-            type='password'
+            type='text'
             id='searcfield'
             name='searchfield'
             placeholder='Search datasets'
@@ -51,6 +51,9 @@ const Datasets = () => {
       </div>
 
       <div className='datasets__card'>
+        <div className='datasets__card__container__heading'>
+          <h3>Popular Datasets</h3>
+        </div>
         <div className='datasets__card__container'>
           {datasets.map((item) => (
             <DatasetsCard
