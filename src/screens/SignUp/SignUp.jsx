@@ -53,9 +53,10 @@ const SignUp = () => {
         setError('')
         setLoading(true);
         await signup(formik.values.email, formik.values.password)
-        // navigate('/get-user-information')
+        navigate('/get-user-information')
       } catch {
         setError('Failed to create an account')
+        console.log(error)
       }
       setLoading(false);
 

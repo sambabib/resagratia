@@ -54,8 +54,10 @@ const SignIn = () => {
         await login(formik.values.email, formik.values.password)
       } catch {
         setError('Failed to create an account')
+        console.log(error)
       }
       setLoading(false);
+      console.log(loading)
     },
   });
 
