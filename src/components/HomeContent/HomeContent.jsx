@@ -1,17 +1,18 @@
 import { Link } from 'react-router-dom';
 
+// @components
+import CoursesCard from '../CoursesCard/CoursesCard';
+import ResearchCard from '../ResearchCard/ResearchCard';
+
+// @data
+import { courses } from '../../data/coursesData';
+import { research } from '../../data/researchData';
+
 // @styling
 import './homecontent.scss';
 
 // @assets
 import HeroImg from '../../assets/hero-img.jpg';
-import Excel from '../../assets/excel.png';
-import PowerBi from '../../assets/powerbi.png';
-import Sql from '../../assets/mysql.png';
-import Tableau from '../../assets/tableau.png';
-import PetrolHands from '../../assets/petrol-hands.jpg';
-import Electricity from '../../assets/electricity-cables.jpg';
-import Banks from '../../assets/dollar-bills.jpg';
 
 // @icons
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
@@ -31,11 +32,11 @@ const HomeContent = () => {
           <div className='hero__text__container'>
             <div className='hero__text'>
               <div className='hero__text__top'>
-                <h1 className='hero__text__heading'>Research.</h1>
+                <h1 className='hero__text__heading'>Data Analytics.</h1>
               </div>
               <div className='hero__text__bottom'>
                 <h1 className='hero__text__heading'>Business Intelligence.</h1>
-                <h1 className='hero__text__heading'>Data Analytics.</h1>
+                <h1 className='hero__text__heading'>Research.</h1>
               </div>
               <div className='hero__text__paragraph'>
                 <p>
@@ -63,69 +64,15 @@ const HomeContent = () => {
             {/* courses box container */}
             <div className='course__box__container'>
               {/* each course box */}
-              <div className='course__box'>
-                <div className='course__box__main'>
-                  <div className='course__box__heading__container'>
-                    <p className='course__heading'>Course</p>
-                    <p className='course__title'>Microsoft Excel</p>
-                  </div>
-                  <div className='course__image'>
-                    <img src={Excel} alt='microsoft excel' />
-                  </div>
-                </div>
-                <div className='view__course'>
-                  <p>View Course</p>
-                  <ArrowForwardIosRoundedIcon className='arrow__forward__icon' />
-                </div>
-              </div>
-
-              <div className='course__box'>
-                <div className='course__box__main'>
-                  <div className='course__box__heading__container'>
-                    <p className='course__heading'>Course</p>
-                    <p className='course__title'>Power BI</p>
-                  </div>
-                  <div className='course__image'>
-                    <img src={PowerBi} alt='power bi' />
-                  </div>
-                </div>
-                <div className='view__course'>
-                  <p>View Course</p>
-                  <ArrowForwardIosRoundedIcon className='arrow__forward__icon' />
-                </div>
-              </div>
-
-              <div className='course__box'>
-                <div className='course__box__main'>
-                  <div className='course__box__heading__container'>
-                    <p className='course__heading'>Course</p>
-                    <p className='course__title'>SQL</p>
-                  </div>
-                  <div className='course__image'>
-                    <img src={Sql} alt='mysql' />
-                  </div>
-                </div>
-                <div className='view__course'>
-                  <p>View Course</p>
-                  <ArrowForwardIosRoundedIcon className='arrow__forward__icon' />
-                </div>
-              </div>
-
-              <div className='course__box'>
-                <div className='course__box__main'>
-                  <div className='course__box__heading__container'>
-                    <p className='course__heading'>Course</p>
-                    <p className='course__title'>Tableau</p>
-                  </div>
-                  <div className='course__image'>
-                    <img src={Tableau} alt='tableau' />
-                  </div>
-                </div>
-                <div className='view__course'>
-                  <p>View Course</p>
-                  <ArrowForwardIosRoundedIcon className='arrow__forward__icon' />
-                </div>
-              </div>
+              {courses.map((course) => {
+                return (
+                  <CoursesCard
+                    key={course.id}
+                    title={course.title}
+                    img={course.img}
+                  />
+                );
+              })}
             </div>
 
             {/* Text description for courses */}
@@ -246,59 +193,16 @@ const HomeContent = () => {
             </h3>
             {/* research items */}
             <div className='research__items'>
-              <div className='research__item'>
-                <div className='research__item__img'>
-                  <img src={PetrolHands} alt='by Luca Nardone from Pexels' />
-                </div>
-                <div className='research__item__tag free'>
-                  <p>Free</p>
-                </div>
-                <div className='research__item__description'>
-                  <h3 className='research__item__title'>
-                    Fuel Prices in Nigeria
-                  </h3>
-                  <div className='view__research__course'>
-                    <p>View Product</p>
-                    <ArrowForwardIosRoundedIcon className='arrow__forward__icon' />
-                  </div>
-                </div>
-              </div>
-
-              <div className='research__item'>
-                <div className='research__item__img'>
-                  <img src={Electricity} alt='electricity cables' />
-                </div>
-                <div className='research__item__tag free'>
-                  <p>Free</p>
-                </div>
-                <div className='research__item__description'>
-                  <h3 className='research__item__title'>
-                    Cost of Electricity in Nigeria
-                  </h3>
-                  <div className='view__research__course'>
-                    <p>View Product</p>
-                    <ArrowForwardIosRoundedIcon className='arrow__forward__icon' />
-                  </div>
-                </div>
-              </div>
-
-              <div className='research__item'>
-                <div className='research__item__img'>
-                  <img src={Banks} alt='by David McBee from Pexels' />
-                </div>
-                <div className='research__item__tag premium'>
-                  <p>Premium</p>
-                </div>
-                <div className='research__item__description'>
-                  <h3 className='research__item__title'>
-                    Financial Performance of Banks in Nigeria
-                  </h3>
-                  <div className='view__research__course'>
-                    <p>View Product</p>
-                    <ArrowForwardIosRoundedIcon className='arrow__forward__icon' />
-                  </div>
-                </div>
-              </div>
+              {research.map((item) => {
+                return (
+                  <ResearchCard
+                    key={item.id}
+                    title={item.title}
+                    img={item.img}
+                    tag={item.tag}
+                  />
+                );
+              })}
             </div>
           </div>
         </div>

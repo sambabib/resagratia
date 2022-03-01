@@ -110,9 +110,11 @@
       width: 425px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
 
       .navbar__search {
         background: #f1f3f4;
+        height: 34px;
         border-radius: 4px;
         display: flex;
         align-items: center;
@@ -142,52 +144,40 @@
         }
       }
 
-      .navbar__auth {
+      .navbar__auth__user {
         width: 180px;
+        height: 60px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        .navbar__auth__user__container {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          .account__icon {
+            color: #808080;
+          }
+        }
+
+        .navbar__auth__arrow__icon {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          position: relative;
+
+          .arrow__icon {
+            color: #808080;
+            cursor: pointer;
+          }
+        }
 
         p {
           font-size: 0.8rem;
           cursor: pointer;
           font-weight: 700;
-        }
-
-        .navbar__signin__button,
-        .navbar__getstarted__button {
-          padding: 9px 18px;
-          border-radius: 4px;
-          cursor: pointer;
-        }
-
-        .navbar__signin__button {
-          border: 1px solid #2b2c54;
-          background: transparent;
-
-          p {
-            color: #2b2c54;
-            letter-spacing: -1px;
-          }
-
-          &:hover {
-            background: #eee;
-          }
-        }
-
-        .navbar__getstarted__button {
-          border: 1px solid #fff;
-          background: #2b2c54;
-
-          p {
-            color: #fff;
-            font-weight: 700;
-            letter-spacing: -1px;
-          }
-
-          &:hover {
-            background: #15175c;
-          }
+          letter-spacing: -1px;
         }
       }
     }

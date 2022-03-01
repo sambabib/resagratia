@@ -1,0 +1,32 @@
+iframe {
+  width: 520px;
+}
+
+@media (max-width: 625px) {
+  .frame__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    iframe {
+      display: block;
+      margin: 0 auto;
+      width: 520px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .frame__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+
+    iframe {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}

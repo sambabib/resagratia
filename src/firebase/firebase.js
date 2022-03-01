@@ -1,5 +1,6 @@
 import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
 const app = firebase.initializeApp({
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -11,5 +12,19 @@ const app = firebase.initializeApp({
   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 });
 
-export const auth = app.auth();
+export const auth = getAuth(app);
+export const db = getFirestore(app);
+
 export default app;
+
+// handling email verification
+// document.addEventListener('DOMContentLoaded', () => {
+//   // Get the action to complete.
+//   const mode = getParameterByName('mode');
+//   // Get the one-time code from the query parameter.
+//   const actionCode = getParameterByName('oobCode');
+//   // (Optional) Get the continue URL from the query parameter if available.
+//   const continueUrl = getParameterByName('continueUrl');
+//   // (Optional) Get the language code if available.
+//   const lang = getParameterByName('lang') || 'en';
+// });

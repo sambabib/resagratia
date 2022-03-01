@@ -5,11 +5,11 @@ import { saveAs } from 'file-saver';
 import Table from '../../components/Table/Table';
 
 // @data
-import { datasets } from '../../data/datasetsdata';
-import { nftData } from '../../data/nftdata';
-import { movieData } from '../../data/moviedata';
-import { petrolData } from '../../data/petroldata';
-import { foodData } from '../../data/fooddata';
+import { datasets } from '../../data/datasetsData';
+import { nftData } from '../../data/nftData';
+import { movieData } from '../../data/movieData';
+import { petrolData } from '../../data/petrolData';
+import { foodData } from '../../data/foodData';
 
 // @icons
 import LocalOfferRoundedIcon from '@mui/icons-material/LocalOfferRounded';
@@ -20,8 +20,6 @@ import CloudDownloadRoundedIcon from '@mui/icons-material/CloudDownloadRounded';
 import './datasetsitem.scss';
 
 const DatasetsItem = () => {
-  const [downloadCount, setDownloadCount] = useState(0);
-  const [pageloadCount, setPageloadCount] = useState(0);
   const [rows, setRows] = useState([]);
   const [columns, setColumns] = useState([]);
 
@@ -31,9 +29,6 @@ const DatasetsItem = () => {
 
   const downloadFile = () => {
     saveAs(data.file, data.title);
-
-    setDownloadCount(downloadCount + 1);
-    setPageloadCount(pageloadCount + 1);
   };
 
   useEffect(() => {
@@ -521,11 +516,6 @@ const DatasetsItem = () => {
           field: 'Genre',
           headerName: 'Genre',
           width: 200,
-          valueFormatter: (params) => {
-            // const valueFormatted =
-            // return `${valueFormatted}`;
-            console.log('formatted:', params);
-          },
         },
         {
           field: 'Movie Runtime',
@@ -540,9 +530,6 @@ const DatasetsItem = () => {
       ]);
     }
   }, [data.id]);
-
-  console.log('rows:', rows);
-  console.log('columns:', columns);
 
   return (
     <div className='datasetsitem'>
@@ -569,7 +556,10 @@ const DatasetsItem = () => {
           <div className='datasetsitem__type'>
             <p>CSV</p> <span />
           </div>
-          <div className='datasetsitem__download__button'>
+          <div
+            className='datasetsitem__download__button'
+            onClick={downloadFile}
+          >
             <FileDownloadRoundedIcon className='download__icon' />
             <p>Download</p>
           </div>
@@ -616,9 +606,9 @@ const DatasetsItem = () => {
                 <FileDownloadRoundedIcon className='datasetsitem__download__icon' />
               </div>
               <div className='datasetsitem__download__info'>
-                <p>{pageloadCount} views</p>
+                <p id='visits'>views</p>
                 <span />
-                <p>{downloadCount} downloads</p>
+                <p> downloads</p>
               </div>
             </div>
           </div>

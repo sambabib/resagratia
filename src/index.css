@@ -6,3 +6,27 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+
+.spinner::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  border: 3px solid transparent;
+  border-top-color: #2b2c54;
+  border-radius: 50%;
+  animation: spin ease 1000ms infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotateZ(360deg);
+  }
+}

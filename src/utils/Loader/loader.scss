@@ -1,0 +1,29 @@
+.loader {
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    @keyframes spin {
+      to {
+        transform: rotateZ(360deg);
+      }
+    }
+    
+    span {
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin: 0 auto;
+      border: 5px solid transparent;
+      border-top-color: #2b2c54;
+      border-radius: 50%;
+      animation: spin ease 1000ms infinite;
+    }
+  }

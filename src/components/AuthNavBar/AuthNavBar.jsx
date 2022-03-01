@@ -1,31 +1,60 @@
 import { useState, useEffect } from 'react';
 import { resizeWidth } from '../../redux/reducers/windowDimensionSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 // @components
 import MobileNavBar from '../MobileNavBar/MobileNavBar';
+import UserAuthMenu from '../../utils/UserAuthMenu/UserAuthMenu';
 
 // @assets
 import resaLogo from '../../assets/logo.svg';
 
 // @styling
-import './navbar.scss';
+import './authnavbar.scss';
 
 // @icons
 import { SearchRounded } from '@mui/icons-material';
 import ArrowDropDownRoundedIcon from '@mui/icons-material/ArrowDropDownRounded';
+import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 
-const NavBar = () => {
+const AuthNavBar = () => {
   const [state, setState] = useState({
     menu1: false,
     menu2: false,
     menu3: false,
   });
 
+  const [showAuth, setShowAuth] = useState(false);
+
+  const { logout, currentUser } = useAuth();
+
   const newWidth = useSelector((state) => state.windowDimension.width);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      logout();
+      navigate('/signin');
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleMenuLeave = () => {
+    setState({
+      menu1: false,
+      menu2: false,
+      menu3: false,
+    });
+  };
+
+  const handleAuthLeave = () => {
+    setShowAuth(false);
+  };
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -48,13 +77,7 @@ const NavBar = () => {
           <div className='navbar__items'>
             <div
               className='navbar__menu__container'
-              onMouseLeave={() =>
-                setState({
-                  menu1: false,
-                  menu2: false,
-                  menu3: false,
-                })
-              }
+              onMouseLeave={handleMenuLeave}
             >
               <div className='navbar__logo'>
                 <Link to='/'>
@@ -151,18 +174,27 @@ const NavBar = () => {
                 />
               </div>
 
-              <div className='navbar__auth'>
-                <Link to='signin'>
-                  <div className='navbar__signin__button'>
-                    <p>Sign in</p>
-                  </div>
-                </Link>
-
-                <Link to='signup'>
-                  <div className='navbar__getstarted__button'>
-                    <p>Get Started</p>
-                  </div>
-                </Link>
+              <div
+                className='navbar__auth__user'
+                onMouseLeave={handleAuthLeave}
+              >
+                <div className='navbar__auth__user__container'>
+                  <AccountCircleRoundedIcon className='account__icon' />
+                  <p>{currentUser?.displayName}</p>
+                </div>
+                <div
+                  className='navbar__auth__arrow__icon'
+                  onMouseEnter={() => setShowAuth(true)}
+                >
+                  <ArrowDropDownRoundedIcon className='arrow__icon' />
+                  {showAuth && (
+                    <UserAuthMenu
+                      showAuth={showAuth}
+                      setShowAuth={setShowAuth}
+                      handleLogout={handleLogout}
+                    />
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -172,4 +204,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default AuthNavBar;

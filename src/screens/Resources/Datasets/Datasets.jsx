@@ -5,10 +5,10 @@ import SearchField from '../../../components/SearchField/SearchField';
 import DatasetsCard from '../../../components/DatasetsCard/DatasetsCard';
 
 // @data
-import { datasets } from '../../../data/datasetsdata';
+import { datasets } from '../../../data/datasetsData';
 
 // @assets
-import DatasetsImg from '../../../assets/datasets-hero.jpg';
+import DatasetsImg from '../../../assets/datasets-hero.png';
 
 // @styling
 import './datasets.scss';

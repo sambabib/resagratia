@@ -1,11 +1,19 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
-import { useAuth } from '../../context/AuthContext';
 import * as Yup from 'yup';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+// @auth
+import { useAuth } from '../../context/AuthContext';
 
 // @assets
 import FormLogo from '../../assets/logo-white.svg';
+
+// @components
+import VerificationModal from '../../utils/VerificationModal/VerificationModal';
+import Loader from '../../utils/Loader/Loader';
 
 // @icons
 import VisibilityRoundedIcon from '@mui/icons-material/VisibilityRounded';
@@ -19,12 +27,12 @@ import './signup.scss';
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-
-  const { signup } = useAuth();
+  const [showModal, setShowModal] = useState(false);
 
   const navigate = useNavigate();
+
+  const { signup, emailVerification } = useAuth();
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
@@ -47,21 +55,23 @@ const SignUp = () => {
           'Password must contain at least 8 characters, one uppercase, one number and one special case character'
         ),
     }),
-    
-    onSubmit: async (values) => {
+
+    onSubmit: async () => {
       try {
-        setError('')
         setLoading(true);
-        await signup(formik.values.email, formik.values.password)
-        navigate('/get-user-information')
-      } catch {
-        setError('Failed to create an account')
-        console.log(error)
+        await signup(formik.values.email, formik.values.password);
+        toast.success('Sign up successful');
+        await emailVerification();
+        setShowModal(true);
+        navigate('/user-details')
+      } catch (err) {
+        console.error(err);
+        if (err.code === 'auth/email-already-in-use') {
+          toast.error('Email already in use');
+        }
+        setLoading(false);
       }
       setLoading(false);
-
-      console.log('email:', formik.values.email)
-      console.log('password:', formik.values.password)
     },
   });
 
@@ -158,15 +168,37 @@ const SignUp = () => {
             <button
               type='submit'
               disabled={
-                !formik.touched.password ||
                 !formik.touched.email ||
                 formik.errors.password ||
-                formik.errors.email
+                formik.errors.email ||
+                loading
               }
             >
               {loading ? 'Signing up...' : 'Get Started'}
             </button>
           </form>
+
+          {loading ? <Loader /> : null}
+
+          <ToastContainer
+            position='top-right'
+            autoClose={5000}
+            hideProgressBar
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            className='react__toast'
+          />
+
+          {showModal && (
+            <VerificationModal
+              // verifyEmail={verifyEmail}
+              setShowModal={setShowModal}
+            />
+          )}
 
           <div className='form__existing__account'>
             <p>

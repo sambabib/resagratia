@@ -1,9 +1,12 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
-import { useAuth } from '../../context/AuthContext';
 import { motion } from 'framer-motion';
 import * as Yup from 'yup';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import { useAuth } from '../../context/AuthContext';
 
 // @assets
 import FormLogo from '../../assets/logo.svg';
@@ -14,19 +17,21 @@ import VisibilityOffRoundedIcon from '@mui/icons-material/VisibilityOffRounded';
 import ArrowBackIosNewRoundedIcon from '@mui/icons-material/ArrowBackIosNewRounded';
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
 
+import Loader from '../../utils/Loader/Loader';
+
 // @styling
 import './signin.scss';
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   const { login } = useAuth();
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
-    console.log(showPassword);
   };
 
   const formik = useFormik({
@@ -47,17 +52,21 @@ const SignIn = () => {
         ),
     }),
 
-    onSubmit: async (values) => {
+    onSubmit: async () => {
       try {
-        setError('')
         setLoading(true);
-        await login(formik.values.email, formik.values.password)
-      } catch {
-        setError('Failed to create an account')
-        console.log(error)
+        await login(formik.values.email, formik.values.password);
+        navigate('/dashboard');
+      } catch (err) {
+        if (err.code === 'auth/wrong-password') {
+          toast.error('Please check the password');
+        }
+        if (err.code === 'auth/user-not-found') {
+          toast.error('Please check the email');
+        }
+        setLoading(false);
       }
       setLoading(false);
-      console.log(loading)
     },
   });
 
@@ -144,15 +153,30 @@ const SignIn = () => {
             <button
               type='submit'
               disabled={
-                !formik.touched.password ||
                 !formik.touched.email ||
                 formik.errors.password ||
-                formik.errors.email
+                formik.errors.email ||
+                loading
               }
             >
-              Sign in
+              {loading ? 'Signing In' : 'Sign In'}
             </button>
           </form>
+
+          {loading ? <Loader /> : null}
+
+          <ToastContainer
+            position='top-right'
+            autoClose={5000}
+            hideProgressBar
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            className='react__toast'
+          />
 
           <div className='form__new__account'>
             <p>

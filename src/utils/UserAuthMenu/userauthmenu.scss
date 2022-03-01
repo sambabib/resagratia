@@ -1,0 +1,45 @@
+.user__authmenu {
+  position: relative;
+
+  .user__authmenu__container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 800;
+    top: 15px;
+    right: 8px;
+    padding: 16px 24px;
+    color: #808080;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+      rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+    ul {
+      list-style: none;
+
+      li {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 400;
+        font-size: 0.8rem;
+        z-index: 99;
+        padding: 8px 0;
+        letter-spacing: -1px;
+        cursor: pointer;
+
+        &:hover {
+          color: #2b2c54;
+        }
+      }
+
+      .logout {
+        color: red !important;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: #111;
+  }
+}

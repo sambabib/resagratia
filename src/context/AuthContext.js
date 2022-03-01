@@ -1,5 +1,13 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { auth } from '../firebase/firebase';
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  sendPasswordResetEmail,
+  sendEmailVerification,
+  onAuthStateChanged
+} from 'firebase/auth';
 
 const AuthContext = React.createContext();
 
@@ -7,24 +15,34 @@ export function useAuth() {
   return useContext(AuthContext);
 }
 
-export function AuthProvider({ children }) {
+export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
 
-  function signup(email, password) {
-    return auth.createUserWithEmailAndPassword(email, password);
-    
-  }
+  const signup = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
 
-  function login(email, password) {
-    return auth.signInWithEmailAndPassword(email, password);
-  }
+  const login = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+
+  const forgotPassword = (email) => {
+    return sendPasswordResetEmail(auth, email);
+  };
+
+  const logout = () => {
+    signOut(auth);
+  };
+
+  const emailVerification = (email) => {
+    return sendEmailVerification(auth.currentUser, email);
+  };
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
+    const unsubscribe = onAuthStateChanged(auth, user => {
       setCurrentUser(user);
       setLoading(false);
-      // user.sendEmailVerification();
     });
 
     return unsubscribe;
@@ -34,6 +52,9 @@ export function AuthProvider({ children }) {
     currentUser,
     signup,
     login,
+    forgotPassword,
+    logout,
+    emailVerification,
   };
 
   return (
@@ -41,4 +62,4 @@ export function AuthProvider({ children }) {
       {!loading && children}
     </AuthContext.Provider>
   );
-}
+};

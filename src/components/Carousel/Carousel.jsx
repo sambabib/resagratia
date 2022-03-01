@@ -3,7 +3,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 // @data
-import { reviews } from '../../data/carouseldata'
+import { reviews } from '../../data/carouselData'
 
 // @icons
 import StarRateRoundedIcon from '@mui/icons-material/StarRateRounded';

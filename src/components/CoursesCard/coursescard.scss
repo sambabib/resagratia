@@ -1,0 +1,74 @@
+.course__card__box {
+  width: 280px;
+  background: #222;
+  border-radius: 4px;
+  padding: 18px 24px;
+
+  .course__card__box__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .course__card__box__heading__container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .course__heading {
+        text-transform: uppercase;
+        font-size: 10px;
+        font-weight: 700;
+        color: #ff8c00;
+      }
+
+      .course__title {
+        font-size: 18px;
+      }
+    }
+
+    .course__image {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: flex-end;
+
+      img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .view__course {
+    display: flex;
+    width: 80px;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+
+    p {
+      font-size: 12px !important;
+      font-weight: 500;
+    }
+
+    .arrow__forward__icon {
+      color: #ff8c00;
+      font-size: 14px;
+    }
+  }
+
+  
+  p {
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: -1px;
+    color: #fff;
+  }
+}
+
+// media queries
+@media (max-width: 620px) {
+  .course__card__box {
+    width: 300px !important;
+  }
+}

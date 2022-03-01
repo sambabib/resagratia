@@ -1,0 +1,164 @@
+.additional__signup__information {
+  padding: 5rem 0;
+
+  .additional__signup__container {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    .additional__signup__description {
+      width: 400px;
+
+      h3 {
+        font-size: 20px;
+        line-height: 1.7;
+      }
+    }
+
+    .form__container {
+      padding: 16px 0;
+      position: relative;
+
+      form {
+        .name__container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 16px;
+
+          .firstname__container,
+          .lastname__container {
+            width: 40%;
+
+            input {
+              width: 100%;
+              padding: 19px;
+              margin: 8px 0;
+              border: 1px solid #cccccc;
+              border-radius: 4px;
+              outline: none;
+
+              &::placeholder {
+                font-family: 'Nunito', sans-serif;
+                letter-spacing: -1px;
+                font-size: 15px;
+              }
+
+              &:focus {
+                border: 1px solid #2684ff;
+              }
+            }
+          }
+        }
+
+        .gender__experience__container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 16px;
+
+          .gender__container,
+          .experience__container {
+            width: 40%;
+          }
+        }
+
+        .country__company__container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 16px;
+
+          .country__container,
+          .company__container {
+            width: 40%;
+          }
+
+          input {
+            width: 100%;
+            padding: 19px;
+            margin: 8px 0;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            outline: none;
+
+            &::placeholder {
+              font-family: 'Nunito', sans-serif;
+              letter-spacing: -1px;
+              font-size: 15px;
+            }
+
+            &:focus {
+              border: 1px solid #2684ff;
+            }
+          }
+        }
+
+        .form__alternate__text {
+          display: flex;
+          flex-direction: row-reverse;
+          justify-content: flex-end;
+          width: 40%;
+          position: absolute;
+          right: 0;
+          margin-top: -15px;
+
+          small {
+            color: #808080;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    button {
+      position: relative;
+      padding: 16px 64px;
+      margin: 16px 0;
+      border-radius: 4px;
+      border: 1px solid #fff;
+      background: #2b2c54;
+      color: #fff;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: -1px;
+      cursor: pointer;
+
+      &:hover {
+        background: #15175c;
+      }
+
+      &:disabled {
+        background: #808080;
+        cursor: not-allowed;
+      }
+    }
+
+    .form__errors {
+      margin-top: 1px;
+      letter-spacing: -1px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 12px;
+      color: red;
+    }
+
+    .select__form__errors {
+      padding: 8px 0;
+      letter-spacing: -1px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 12px;
+      color: red;
+    }
+
+    .form__error__border {
+      border: 1px solid red !important;
+    }
+  }
+
+  h3,
+  p,
+  form {
+    color: #111;
+    font-family: 'Nunito', sans-serif;
+    letter-spacing: -1px;
+  }
+}
