@@ -27,6 +27,7 @@
       }
 
       button {
+        position: relative;
         padding: 16px 32px;
         border-radius: 4px;
         border: 1px solid #fff;
@@ -39,6 +40,11 @@
 
         &:hover {
           background: #15175c;
+        }
+
+        &:disabled {
+          background: #808080;
+          cursor: not-allowed;
         }
       }
     }

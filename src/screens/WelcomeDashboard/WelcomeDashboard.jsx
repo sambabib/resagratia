@@ -17,8 +17,15 @@ import ResearchCard from '../../components/ResearchCard/ResearchCard';
 
 const WelcomeDashboard = () => {
   const [isUserVerified, setIsUserVerified] = useState(true);
+  const [loading, setLoading] = useState(false);
 
-  const { currentUser } = useAuth();
+  const { currentUser, emailVerification } = useAuth();
+
+  const handleDashboardVerification = async () => {
+    setLoading(true);
+    await emailVerification();
+    setLoading(false)
+  };
 
   useEffect(() => {
     if (currentUser.emailVerified === false) {
@@ -41,7 +48,14 @@ const WelcomeDashboard = () => {
             </p>
 
             <div className='welcome__dashboard__verify__button'>
-              <button type='button'>Send verification email</button>
+              <button
+                type='button'
+                onClick={handleDashboardVerification}
+                disabled={loading}
+                className={loading ? 'spinner' : null}
+              >
+                {loading ? 'Sending...' : 'Send verification email'}
+              </button>
             </div>
           </div>
         ) : null}
