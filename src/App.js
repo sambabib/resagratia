@@ -32,9 +32,9 @@ const App = () => {
       location.pathname === '/signup' ? null : location.pathname ===
         '/user-details' ? (
         <NavBar />
-      ) : currentUser.displayName !== null ? (
+      ) : currentUser && currentUser.displayName !== null ? (
         <AuthNavBar />
-      ) : currentUser.displayName === null || currentUser.displayName === '' ? (
+      ) : !currentUser || currentUser.displayName === null || currentUser.displayName === '' ? (
         <NavBar />
       ) : null}
       <ScrollToTop>
