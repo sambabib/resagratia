@@ -64,6 +64,9 @@ const SignIn = () => {
         if (err.code === 'auth/user-not-found') {
           toast.error('Please check the email');
         }
+        if (err.code === 'auth/network-request-failed') {
+          toast.error('Please check your network connection then try again');
+        }
         setLoading(false);
       }
       setLoading(false);

@@ -1,8 +1,10 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import Select from 'react-select';
 import countryList from 'react-select-country-list';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import * as Yup from 'yup';
 
 import { addDoc, collection, Timestamp } from 'firebase/firestore';
@@ -125,8 +127,29 @@ const UserSignupDetails = () => {
     },
   });
 
+  useEffect(() => {
+    if (currentUser) {
+      toast.warn(`Hello, ${currentUser.email}. Please complete the form`)
+    } else {
+      toast.warn('Please complete the form');
+    }
+  }, [currentUser]);
+
   return (
     <div className='additional__signup__information'>
+      <ToastContainer
+        position='top-right'
+        autoClose={5000}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        className='react__toast'
+      />
+
       <div className='additional__signup__container'>
         <div className='additional__signup__description'>
           <h3>

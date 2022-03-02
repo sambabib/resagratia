@@ -61,13 +61,17 @@ const SignUp = () => {
         setLoading(true);
         await signup(formik.values.email, formik.values.password);
         toast.success('Sign up successful');
+        toast.warn('Please check your inbox to verify your email');
         await emailVerification();
         setShowModal(true);
-        navigate('/user-details')
+        navigate('/user-details');
       } catch (err) {
         console.error(err);
         if (err.code === 'auth/email-already-in-use') {
           toast.error('Email already in use');
+        }
+        if (err.code === 'auth/network-request-failed') {
+          toast.error('Please check your network connection then try again');
         }
         setLoading(false);
       }
@@ -193,12 +197,7 @@ const SignUp = () => {
             className='react__toast'
           />
 
-          {showModal && (
-            <VerificationModal
-              // verifyEmail={verifyEmail}
-              setShowModal={setShowModal}
-            />
-          )}
+          {showModal && <VerificationModal setShowModal={setShowModal} />}
 
           <div className='form__existing__account'>
             <p>

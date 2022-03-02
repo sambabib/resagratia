@@ -148,7 +148,7 @@
         width: 180px;
         height: 60px;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
 
         .navbar__auth__user__container {
@@ -158,6 +158,17 @@
 
           .account__icon {
             color: #808080;
+          }
+        }
+
+        .navbar__noauth__user__container {
+          border: 1px solid #004085;
+          border-radius: 4px;
+          background: #cce5ff;
+          padding: 8px 16px;
+
+          p {
+            color: #004085 !important;
           }
         }
 

@@ -1,6 +1,9 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useAuth } from './context/AuthContext';
 
+// route
+import DashboardPrivateRoute from './Route/DashboardPrivateRoute';
+
 // components
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
@@ -29,11 +32,11 @@ const App = () => {
       location.pathname === '/signup' ? null : location.pathname ===
         '/user-details' ? (
         <NavBar />
-      ) : currentUser ? (
+      ) : currentUser.displayName !== null ? (
         <AuthNavBar />
-      ) : (
+      ) : currentUser.displayName === null || currentUser.displayName === '' ? (
         <NavBar />
-      )}
+      ) : null}
       <ScrollToTop>
         <Routes>
           <Route path='/' element={<HomeContent />} />
@@ -47,7 +50,14 @@ const App = () => {
           <Route path='resources/datasets' element={<Datasets />} />
           <Route path='resources/datasets/:id' element={<DatasetsItem />} />
           <Route path='user-details' element={<UserSignupDetails />} />
-          <Route path='dashboard' element={<WelcomeDashboard />} />
+          <Route
+            path='dashboard'
+            element={
+              <DashboardPrivateRoute>
+                <WelcomeDashboard />
+              </DashboardPrivateRoute>
+            }
+          />
         </Routes>
       </ScrollToTop>
       {location.pathname === '/signin' ||
