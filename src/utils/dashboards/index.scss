@@ -7,13 +7,16 @@ iframe {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 520px;
+    text-align: center;
+    // width: 100%;
 
-    iframe {
-      display: block;
-      margin: 0 auto;
-      width: 520px;
-    }
+    // iframe {
+    //   // display: block;
+    //   // margin: 0 auto;
+    //   // width: 520px;
+    //   // width: 100vw !important;
+    // }
   }
 }
 

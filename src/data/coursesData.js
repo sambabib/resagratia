@@ -11,7 +11,7 @@ export const courses = [
   },
   {
     id: 2,
-    title: 'Power Bi',
+    title: 'Power BI',
     img: PowerBi,
   },
   {

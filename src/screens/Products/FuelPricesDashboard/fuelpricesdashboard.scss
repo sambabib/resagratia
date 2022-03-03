@@ -278,11 +278,20 @@
       }
     }
 
-    .tableau__dashboard__container {
-      min-width: 100% !important;
+    .tableau__dashboard {
+      width: 100vw !important;
       display: flex;
-      align-items: center;
       justify-content: center;
+      overflow-x: scroll !important;
+      position: relative;
+
+      .tableau__dashboard__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 0;
+      }
     }
 
     .gainaccess {
@@ -350,7 +359,7 @@
 
       .other__dashboards__container {
         width: 100% !important;
-        
+
         .other__dashboards__dashboard {
           display: flex;
           flex-wrap: wrap !important;

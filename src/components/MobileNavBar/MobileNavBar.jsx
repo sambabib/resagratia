@@ -15,7 +15,7 @@ import './mobilenavbar.scss';
 const learnMenu = [
   {
     id: 1,
-    title: 'Power Bi',
+    title: 'Power BI',
     link: '/learn/excel',
   },
   {

@@ -1,6 +1,4 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
 
 // @components
 import CoursesCard from '../CoursesCard/CoursesCard';
@@ -26,14 +24,6 @@ import BookmarkRoundedIcon from '@mui/icons-material/BookmarkRounded';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 
 const HomeContent = () => {
-  const { currentUser } = useAuth();
-
-  useEffect(() => {
-    if (currentUser) {
-      console.log('user exists')
-    }
-  }, [currentUser])
-
   return (
     <div className='home__content'>
       <div className='home__content__container'>
