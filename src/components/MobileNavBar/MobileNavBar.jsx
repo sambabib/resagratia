@@ -152,6 +152,13 @@ const MobileNavBar = () => {
             </Link>
           </div>
 
+           {/* get started button */}
+           <div className='mobile__getstarted__button'>
+            <Link to='signup' onClick={() => setMenuOpen(false)}>
+              <p>Get started</p>
+            </Link>
+          </div>
+
           {/* menu items */}
           <div className='menu__elements'>
             <div className='menu__element__container'>
@@ -188,13 +195,6 @@ const MobileNavBar = () => {
                 </ul>
               </div>
             </div>
-          </div>
-
-          {/* get started button */}
-          <div className='mobile__getstarted__button'>
-            <Link to='signup' onClick={() => setMenuOpen(false)}>
-              <p>Get started</p>
-            </Link>
           </div>
         </div>
       ) : null}
