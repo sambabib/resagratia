@@ -178,14 +178,14 @@ const AuthNavBar = () => {
                 className='navbar__auth__user'
                 onMouseLeave={handleAuthLeave}
               >
-                <div className='navbar__auth__user__container'>
+                <div
+                  className='navbar__auth__user__container'
+                  onMouseEnter={() => setShowAuth(true)}
+                >
                   <AccountCircleRoundedIcon className='account__icon' />
                   <p>{currentUser?.displayName}</p>
                 </div>
-                <div
-                  className='navbar__auth__arrow__icon'
-                  onMouseEnter={() => setShowAuth(true)}
-                >
+                <div className='navbar__auth__arrow__icon'>
                   <ArrowDropDownRoundedIcon className='arrow__icon' />
                   {showAuth && (
                     <UserAuthMenu
