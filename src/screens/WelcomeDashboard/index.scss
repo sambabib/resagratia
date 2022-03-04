@@ -105,6 +105,12 @@
       justify-content: space-between;
       gap: 32px;
       overflow-x: auto !important;
+      overflow-x: -moz-scrollbars-none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        width: 0 !important;
+      }
     }
 
     h3 {
