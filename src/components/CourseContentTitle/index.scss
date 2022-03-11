@@ -1,0 +1,29 @@
+.coursecontent__topic {
+  .coursecontent__topic__title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    .coursecontent__topic__item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba($color: #eee, $alpha: 0.9);
+      cursor: pointer;
+
+      h3 {
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      .folder__icon {
+        font-size: 20px;
+      }
+    }
+
+    .coursecontent__topic__details {
+      padding: 1rem 0;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.course__content__topic {
+  ul {
+    list-style: none;
+
+    li {
+      font-size: 14px;
+      padding: 16px 8px;
+      border-bottom: 1px solid rgba($color: #eee, $alpha: 0.9);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .icon {
+        font-size: 19px;
+        color: #111;
+    }
+  }
+}

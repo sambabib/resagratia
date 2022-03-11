@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 
 // @components
-import CoursesCard from '../CoursesCard/CoursesCard';
-import ResearchCard from '../ResearchCard/ResearchCard';
+import CoursesCard from '../../components/CoursesCard/CoursesCard';
+import ResearchCard from '../../components/ResearchCard/ResearchCard';
 
 // @data
 import { courses } from '../../data/coursesData';

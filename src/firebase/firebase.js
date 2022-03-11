@@ -18,13 +18,3 @@ export const db = getFirestore(app);
 export default app;
 
 // handling email verification
-// document.addEventListener('DOMContentLoaded', () => {
-//   // Get the action to complete.
-//   const mode = getParameterByName('mode');
-//   // Get the one-time code from the query parameter.
-//   const actionCode = getParameterByName('oobCode');
-//   // (Optional) Get the continue URL from the query parameter if available.
-//   const continueUrl = getParameterByName('continueUrl');
-//   // (Optional) Get the language code if available.
-//   const lang = getParameterByName('lang') || 'en';
-// });

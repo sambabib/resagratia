@@ -7,6 +7,12 @@
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  font-family: 'Nunito', sans-serif;
+  letter-spacing: -1px;
+}
+
 .spinner::after {
   content: '';
   position: absolute;
