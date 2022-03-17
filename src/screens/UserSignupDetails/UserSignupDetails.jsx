@@ -28,6 +28,16 @@ const genderOptions = [
     value: 'Female',
     label: 'Female',
   },
+  {
+    id: 3,
+    value: 'Other',
+    label: 'Other',
+  },
+  {
+    id: 4,
+    value: 'Prefer not to say',
+    label: 'Prefer not to say',
+  },
 ];
 
 const experienceOptions = [

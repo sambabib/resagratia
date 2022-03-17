@@ -4,15 +4,11 @@ export const windowDimensionSlice = createSlice({
   name: 'windowDimension',
   initialState: {
     width: window.innerWidth,
-    // height: window.innerHeight,
   },
   reducers: {
     resizeWidth: (state) => {
       state.width = window.innerWidth;
     },
-    // resizeHeight: (state) => {
-    //   state.height = state.innerHeight;
-    // },
   },
 });
 
