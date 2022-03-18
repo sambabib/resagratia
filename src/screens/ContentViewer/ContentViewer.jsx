@@ -6,12 +6,14 @@ import Tabs from '../../components/Tabs/Tabs';
 import './index.scss';
 
 const ContentViewer = () => {
-   return (
+  return (
     <div className='contentviewer'>
       <div className='contentviewer__container'>
         <div className='contentviewer__course'>
           <div className='contentviewer__video__player'>
-            <video src='' controls='controls' autoPlay={true}></video>
+            <video controls autoPlay>
+              <source></source>
+            </video>
           </div>
           <Tabs />
         </div>
