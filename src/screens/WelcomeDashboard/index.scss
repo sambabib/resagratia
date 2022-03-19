@@ -79,8 +79,9 @@
     }
   }
   .welcome__dashboard__paths {
-    width: 100%;
-    margin: 1rem 0;
+    position: relative;
+    max-width: 1100px;
+    margin: 1rem auto;
     padding: 2rem 0;
     height: fit-content;
 
@@ -113,13 +114,39 @@
       }
     }
 
+    .welcome__dashboard__scroll__button {
+      position: absolute;
+      bottom: 0;
+      right: 10px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      button {
+        width: 40px;
+        height: 40px;
+        background: #f7f9fa;
+        border-radius: 50%;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        .scroll__icon {
+          color: #2b2c54;
+        }
+      }
+    }
+
     h3 {
       padding: 16px 0;
     }
   }
 
   .welcome__dashboard__research {
-    margin: 1rem 0;
+    max-width: 1100px;
+    margin: 1rem auto;
     padding: 2rem 0;
     height: fit-content;
 

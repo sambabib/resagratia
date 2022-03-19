@@ -1,3 +1,7 @@
+// assets
+import seoul from '../../assets/videos/seoul.mp4'
+import people from '../../assets/videos/people.mp4'
+
 export const overview = [
   {
     id: 1,
@@ -19,6 +23,7 @@ export const overview = [
               {
                 id: 100,
                 title: `Introduction to Tutor`,
+                content: seoul
               },
             ],
           },
@@ -29,6 +34,7 @@ export const overview = [
               {
                 id: 110,
                 title: `Introduction to the course objectives`,
+                content: people
               },
             ],
           },

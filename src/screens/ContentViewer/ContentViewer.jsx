@@ -1,3 +1,5 @@
+import { useSelector } from 'react-redux';
+
 // @components
 import CourseContent from '../../components/CourseContent/CourseContent';
 import Tabs from '../../components/Tabs/Tabs';
@@ -6,12 +8,15 @@ import Tabs from '../../components/Tabs/Tabs';
 import './index.scss';
 
 const ContentViewer = () => {
-   return (
+  const videos = useSelector((state) => state.videoContent.video);
+
+  return (
     <div className='contentviewer'>
       <div className='contentviewer__container'>
         <div className='contentviewer__course'>
           <div className='contentviewer__video__player'>
-            <video src='' controls='controls' autoPlay={true}></video>
+            <video src={videos} controls autoPlay>
+            </video>
           </div>
           <Tabs />
         </div>

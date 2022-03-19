@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useAuth } from '../../context/AuthContext';
 
 // @@components
@@ -6,6 +6,8 @@ import CoursesCard from '../../components/CoursesCard/CoursesCard';
 
 // @icons
 import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
+import ChevronRightRoundedIcon from '@mui/icons-material/ChevronRightRounded';
+import ChevronLeftRoundedIcon from '@mui/icons-material/ChevronLeftRounded';
 
 // @data
 import { courses } from '../../data/coursesData';
@@ -18,6 +20,8 @@ import ResearchCard from '../../components/ResearchCard/ResearchCard';
 const WelcomeDashboard = () => {
   const [isUserVerified, setIsUserVerified] = useState(true);
   const [loading, setLoading] = useState(false);
+
+  const pathRef = useRef(null)
 
   const { currentUser, emailVerification } = useAuth();
 
@@ -75,7 +79,7 @@ const WelcomeDashboard = () => {
         <div className='welcome__dashboard__paths__heading'>
           <h3>Learning paths</h3>
         </div>
-        <div className='welcome__dashboard__paths__container'>
+        <div className='welcome__dashboard__paths__container' ref={pathRef}>
           {courses.map((course) => {
             return (
               <CoursesCard
@@ -85,6 +89,14 @@ const WelcomeDashboard = () => {
               />
             );
           })}
+        </div>
+        <div className="welcome__dashboard__scroll__button">
+        <button onClick={() => pathRef.current.scrollLeft -= 300}>
+            <ChevronLeftRoundedIcon className='scroll__icon' />
+          </button>
+          <button onClick={() => pathRef.current.scrollLeft += 300}>
+            <ChevronRightRoundedIcon className='scroll__icon' />
+          </button>
         </div>
       </div>
 
