@@ -1,0 +1,47 @@
+.sql__console {
+  max-width: 1100px;
+  margin: 0 auto;
+  font-size: 1em;
+  padding: 16px 0;
+  text-align: center;
+
+  h1 {
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+    padding: 16px 0;
+  }
+}
+
+textarea {
+  font-size: 1.1em;
+  width: 70%;
+  height: 100px;
+  display: block;
+  margin: auto;
+  margin-bottom: 16px;
+}
+
+table {
+  border: 1px solid #1c6ea4;
+  background-color: #eeeeee;
+  width: 40%;
+  margin: 1.5em auto;
+  text-align: left;
+  border-collapse: collapse;
+  text-align: right;
+}
+
+thead {
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid #999;
+}
+
+th,
+td {
+  border: 1px solid #aaa;
+}
+
+.error {
+  color: #922;
+}

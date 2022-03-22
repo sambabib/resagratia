@@ -22,6 +22,8 @@ import UserSignupDetails from './screens/UserSignupDetails/UserSignupDetails';
 import WelcomeDashboard from './screens/WelcomeDashboard/WelcomeDashboard';
 import ContentViewer from './screens/ContentViewer/ContentViewer';
 
+import SqlConsole from './utils/console/SqlConsole';
+
 const App = () => {
   const location = useLocation();
 
@@ -60,6 +62,7 @@ const App = () => {
             }
           />
           <Route path='library' element={<ContentViewer />} />
+          <Route path='console' element={<SqlConsole />} />
         </Routes>
       </ScrollToTop>
       {location.pathname === '/signin' ||
